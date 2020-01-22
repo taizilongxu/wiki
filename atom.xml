@@ -6,7 +6,7 @@
   <link href="/wiki/atom.xml" rel="self"/>
   
   <link href="http://taizilongxu.github.io/wiki/"/>
-  <updated>2020-01-20T17:36:05.000Z</updated>
+  <updated>2020-01-22T07:00:40.944Z</updated>
   <id>http://taizilongxu.github.io/wiki/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cgroup</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/cgroup/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/cgroup/</id>
+    <published>2020-01-22T07:00:22.615Z</published>
+    <updated>2020-01-22T07:00:40.944Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux boot</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/boot/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Linux/boot/</id>
+    <published>2020-01-21T09:47:45.066Z</published>
+    <updated>2020-01-22T09:16:14.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/" target="_blank" rel="noopener">http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121175449.png" alt=""></p><ol><li>BIOS: Basic Input/Output System 硬件检测, 自检完后找到 MBR 移交执行</li><li>MBR: Master Boot Record</li><li>GRUB:  Grand Unified Bootloader 负责选择多个系统 img</li><li>Kernal: Linux kenel 内核启动</li><li>init: 启动各种程序</li></ol><h2 id="BIOS-amp-UEFI"><a href="#BIOS-amp-UEFI" class="headerlink" title="BIOS &amp; UEFI"></a>BIOS &amp; UEFI</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg" alt=""></p><ol><li>1980s 开始 BIOS 系统</li><li>应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用</li><li>2007 年 UEFI 问世, 统一标准</li></ol><h2 id="MBR"><a href="#MBR" class="headerlink" title="MBR"></a>MBR</h2><figure class="highlight plain"><figcaption><span>GPT, 配合 UEFI 食用```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MBR:</span><br><span class="line"></span><br><span class="line">* 优点: 简单</span><br><span class="line">* 缺点: 只能 4 个分区, 不能识别大于 2T 的分区</span><br><span class="line"></span><br><span class="line">硬盘第一块 secotr 即为 MBR, 一般 512 bytes</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">sudo xxd -g 1 &#x2F;dev&#x2F;sda | head -40</span><br><span class="line"></span><br><span class="line">0000000: eb 63 90 10 8e d0 bc 00 b0 b8 00 00 8e d8 8e c0  .c..............</span><br><span class="line">0000010: fb be 00 7c bf 00 06 b9 00 02 f3 a4 ea 21 06 00  ...|.........!..</span><br><span class="line">0000020: 00 be be 07 38 04 75 0b 83 c6 10 81 fe fe 07 75  ....8.u........u</span><br><span class="line">0000030: f3 eb 16 b4 02 b0 01 bb 00 7c b2 80 8a 74 01 8b  .........|...t..</span><br><span class="line">0000040: 4c 02 cd 13 ea 00 7c 00 00 eb fe 00 00 00 00 00  L.....|.........</span><br></pre></td></tr></table></figure><p>MBR 结构:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122115921.png" alt=""></p><h2 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg/1280px-GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg.png" alt="img"></p><ul><li><p>boot.img: 严格占有 446 bytes, 主要作用就是调用 BIOS 来加载 core.img 的 sector 到内存</p></li><li><p>core.img: 写入位于 MBR 和第一分区之间的部分, 在 32256 bytes 以下, 并不用占满, 主要是 <code>GRUB 的内核</code>, 加载后掌握控制权</p></li><li><p>/boot/grub: 一些 grub 配置文件</p></li></ul><h2 id="Kernal"><a href="#Kernal" class="headerlink" title="Kernal"></a>Kernal</h2><p>Bootloader 进行 Kernal 的 img 镜像加载解压缩, 并给予控制权, 最后调用 init 进行其他启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121180904.png" alt=""></p><h2 id="System-V-amp-Systemd"><a href="#System-V-amp-Systemd" class="headerlink" title="System V &amp; Systemd"></a>System V &amp; Systemd</h2><p>kernal 会调用 <code>/sbin/init</code> 来启动 uid 为 1 的守护进程, 有两种选择</p><ul><li>System V: 注意这个启动是串行, 很少在用,  感兴趣可以了解下,  命令 <code>service</code></li><li>Systemd(地址会软链到<code>/lib/systemd/systemd</code>): 兼容 System V</li></ul><h3 id="System-V"><a href="#System-V" class="headerlink" title="System V"></a>System V</h3><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153855.png" alt=""></p><h3 id="Systemd"><a href="#Systemd" class="headerlink" title="Systemd"></a>Systemd</h3><p>配置地址: </p><ul><li><code>/lib/systemd/system</code> : 系统自带或程序自带安装地址</li><li><code>/etc/systemd/system</code>: 用户自定义, 可覆盖上面文件夹内容</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153923.png" alt=""></p><p>概念说明:</p><ul><li>target: target 也属于 Unit 一种,  是 Unit 的逻辑集合(和 System V 的运行级别概念相同), 同时还有个 <code>*.target.wants</code> 文件放置它所管理的 Unit</li><li>Unit: 最小单元, 分几种类型的资源, 例如 device, mount, target 和我们最常用的 service</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122162730.png" alt=""></p><p>上图启动 garphitcal.target 执行的依赖</p><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 常用</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl status/start/restart/stop/reload &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有正在运行的, 类型为 service 的 Unit</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-units --<span class="built_in">type</span>=service</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看依赖</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-dependencies &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看配置文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl cat &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看启动时的默认 Target</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl get-default</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看主机信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hostnamectl</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前登录用户</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-sessions</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-users</span></span><br></pre></td></tr></table></figure><p>日志管理:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看内核日志（不显示应用日志）</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -k</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定进程的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl _PID=1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个路径的脚本的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个 Unit 的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service --since today</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定时间的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since=<span class="string">"2012-10-30 18:17:16"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"20 min ago"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since yesterday</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"2015-01-10"</span> --until <span class="string">"2015-01-11 03:00"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since 09:00 --until <span class="string">"1 hour ago"</span></span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考资料:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.nixh
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Class 文件结构</title>
@@ -76,17 +117,9 @@
     <link href="http://taizilongxu.github.io/wiki/wiki/index/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/index/</id>
     <published>2020-01-20T15:45:04.000Z</published>
-    <updated>2020-01-20T15:45:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>一直在找代替 Blog 的工具, 发现 Wiki 更适合知识体系的构建, 经常性的总结比记流水帐更有效果</p>]]></content>
+    <updated>2020-01-22T04:36:45.628Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;p&gt;一直在找代替 Blog 的工具, 发现 Wiki 更适合知识体系的构建, 经常性的总结比记流水帐更有效果&lt;/p&gt;
-
-      
     
     </summary>
     
@@ -138,20 +171,20 @@
   </entry>
   
   <entry>
-    <title>包管理系统</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/package/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Linux/package/</id>
+    <title>shell</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/shell/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Linux/shell/</id>
     <published>2020-01-15T12:06:59.173Z</published>
-    <updated>2020-01-21T08:38:45.551Z</updated>
+    <updated>2020-01-21T12:13:35.257Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/package_management.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Shell-原理"><a href="#Shell-原理" class="headerlink" title="Shell 原理"></a>Shell 原理</h2><p>系统提供 shell 给用户调用内核</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/LinuxShell.png" alt=""></p><p>执行过程:</p><ol><li>读取用户键盘指令</li><li>分析命令，以命令名作为文件名，并将其它参数改造为系统调用 <code>execve()</code> 内部处理所要求的形式 </li><li>终端进程调用 <code>fork()</code> 建立一个子进程</li><li>终端进程本身用系统调用 <code>wait4()</code> 来等待子进程完成(如果是后台命令，则不等待). 当子进程运行时调用 <code>execve()</code>，子进程根据文件名(即命令名)到目录中查找有关文件(这是命令解释程序构成的文件), 将它调入内存, 执行这个程序(解释这条命令)</li><li>如果命令末尾有&amp;号(后台命令符号), 则终端进程不用系统调用 <code>wait4()</code> 等待, 立即发提示符, 让用户输入下一个命令, 转 1 如果命令末尾没有 &amp; 号, 则终端进程要一直等待, 当子进程(即运行命令的进程)完成处理后终止, 向父进程(终端进程)报告, 此时终端进程醒来, 在做必要的判别等工作后, 终端进程发提示符, 让用户输入新的命令, 重复上述处理过程.</li></ol><h2 id="内置-Shell-命令"><a href="#内置-Shell-命令" class="headerlink" title="内置 Shell 命令"></a>内置 Shell 命令</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/linux_shell_cmd.png" alt=""></p><h2 id="Shell-navigation"><a href="#Shell-navigation" class="headerlink" title="Shell navigation"></a>Shell navigation</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/cli-navigation.png" alt=""></p><h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/package_management.png" alt=""></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/package_management.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
+        &lt;h2 id=&quot;Shell-原理&quot;&gt;&lt;a href=&quot;#Shell-原理&quot; class=&quot;headerlink&quot; title=&quot;Shell 原理&quot;&gt;&lt;/a&gt;Shell 原理&lt;/h2&gt;&lt;p&gt;系统提供 shell 给用户调用内核&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ra
       
     
     </summary>
@@ -392,28 +425,25 @@
   </entry>
   
   <entry>
-    <title>UEFI 与 BIOS</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hackintosh/uefi_bios/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hackintosh/uefi_bios/</id>
-    <published>2019-12-08T12:19:05.000Z</published>
-    <updated>2020-01-15T12:06:59.170Z</updated>
+    <title>unix 哲学</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/unix/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Linux/unix/</id>
+    <published>2019-11-12T08:14:06.000Z</published>
+    <updated>2020-01-15T12:06:59.172Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg" alt=""></p><ol><li>1980s 开始 BIOS 系统</li><li>应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用</li><li>2007 年 UEFI 问世, 统一标准</li></ol>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;1980s 开始 BIOS 系统&lt;/li&gt;
-&lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://zh.wikipedia.org/wiki/Unix%E5%93%B2
       
     
     </summary>
     
     
-      <category term="Hackintosh" scheme="http://taizilongxu.github.io/wiki/categories/Hackintosh/"/>
+      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
     
     
   </entry>
@@ -433,55 +463,6 @@
       
         &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/env.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>shell</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/shell/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Linux/shell/</id>
-    <published>2019-11-12T08:14:06.000Z</published>
-    <updated>2020-01-21T08:39:05.718Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Shell-原理"><a href="#Shell-原理" class="headerlink" title="Shell 原理"></a>Shell 原理</h2><p>系统提供 shell 给用户调用内核</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/LinuxShell.png" alt=""></p><p>执行过程:</p><ol><li>读取用户键盘指令</li><li>分析命令，以命令名作为文件名，并将其它参数改造为系统调用 <code>execve()</code> 内部处理所要求的形式 </li><li>终端进程调用 <code>fork()</code> 建立一个子进程</li><li>终端进程本身用系统调用 <code>wait4()</code> 来等待子进程完成(如果是后台命令，则不等待). 当子进程运行时调用 <code>execve()</code>，子进程根据文件名(即命令名)到目录中查找有关文件(这是命令解释程序构成的文件), 将它调入内存, 执行这个程序(解释这条命令)</li><li>如果命令末尾有&amp;号(后台命令符号), 则终端进程不用系统调用 <code>wait4()</code> 等待, 立即发提示符, 让用户输入下一个命令, 转 1 如果命令末尾没有 &amp; 号, 则终端进程要一直等待, 当子进程(即运行命令的进程)完成处理后终止, 向父进程(终端进程)报告, 此时终端进程醒来, 在做必要的判别等工作后, 终端进程发提示符, 让用户输入新的命令, 重复上述处理过程.</li></ol><h2 id="内置-Shell-命令"><a href="#内置-Shell-命令" class="headerlink" title="内置 Shell 命令"></a>内置 Shell 命令</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/linux_shell_cmd.png" alt=""></p><h2 id="Shell-navigation"><a href="#Shell-navigation" class="headerlink" title="Shell navigation"></a>Shell navigation</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/cli-navigation.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Shell-原理&quot;&gt;&lt;a href=&quot;#Shell-原理&quot; class=&quot;headerlink&quot; title=&quot;Shell 原理&quot;&gt;&lt;/a&gt;Shell 原理&lt;/h2&gt;&lt;p&gt;系统提供 shell 给用户调用内核&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ra
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>unix 哲学</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/unix/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Linux/unix/</id>
-    <published>2019-11-12T08:14:06.000Z</published>
-    <updated>2020-01-15T12:06:59.172Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://zh.wikipedia.org/wiki/Unix%E5%93%B2
       
     
     </summary>

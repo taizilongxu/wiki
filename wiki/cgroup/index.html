@@ -3,25 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>UEFI 与 BIOS | Limbo&#39;s Wiki</title>
+    <title>cgroup | Limbo&#39;s Wiki</title>
     
     
-        <meta name="keywords" content="UEFI 与 BIOS" />
+        <meta name="keywords" content="cgroup" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1980s 开始 BIOS 系统 应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用 2007 年 UEFI 问世, 统一标准">
-<meta property="og:type" content="article">
-<meta property="og:title" content="UEFI 与 BIOS">
-<meta property="og:url" content="http://taizilongxu.github.io/wiki/wiki/Hackintosh/uefi_bios/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="cgroup">
+<meta property="og:url" content="http://taizilongxu.github.io/wiki/wiki/cgroup/index.html">
 <meta property="og:site_name" content="Limbo&#39;s Wiki">
-<meta property="og:description" content="1980s 开始 BIOS 系统 应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用 2007 年 UEFI 问世, 统一标准">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg">
-<meta property="article:published_time" content="2019-12-08T12:19:05.000Z">
-<meta property="article:modified_time" content="2020-01-15T12:06:59.170Z">
+<meta property="article:published_time" content="2020-01-22T07:00:22.615Z">
+<meta property="article:modified_time" content="2020-01-22T07:00:40.944Z">
 <meta property="article:author" content="Limbo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg">
     
 
     
@@ -209,13 +205,13 @@
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Blog/hello-world/">Hello World</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             Hackintosh
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hackintosh/principel/">黑苹果原理</a></li>  <li class="file active"><a href="/wiki/wiki/Hackintosh/uefi_bios/">UEFI 与 BIOS</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hackintosh/principel/">黑苹果原理</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -269,7 +265,7 @@
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/package/">包管理系统</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  <li class="file"><a href="/wiki/wiki/Linux/boot/">Linux boot</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -280,7 +276,7 @@
                         </a>
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Tools/git/">Git 原理</a></li>  <li class="file"><a href="/wiki/wiki/Tools/ssh/">Ssh</a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/class_bytes/">Class 文件结构</a></li>  </ul> 
+                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/class_bytes/">Class 文件结构</a></li>  <li class="file active"><a href="/wiki/wiki/cgroup/">cgroup</a></li>  </ul> 
     </div>
     <script>
         $(document).ready(function() {
@@ -351,7 +347,7 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-Hackintosh/uefi_bios" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-cgroup" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -359,17 +355,12 @@
                 
                     <div class="article-meta">
                         
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/wiki/categories/Hackintosh/">Hackintosh</a>
-    </div>
-
                         
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/wiki/wiki/Hackintosh/uefi_bios/">
-            <time datetime="2019-12-08T12:19:05.000Z" itemprop="datePublished">2019-12-08</time>
+        <a href="/wiki/wiki/cgroup/">
+            <time datetime="2020-01-22T07:00:22.615Z" itemprop="datePublished">2020-01-22</time>
         </a>
     </div>
 
@@ -380,13 +371,13 @@
                         
                         
                             <div class="article-meta-button">
-                                <a href='https://github.com/taizilongxu/Wiki-site/raw/master/source/_posts/Hackintosh/uefi_bios.md' target="_blank" rel="noopener"> Source </a>
+                                <a href='https://github.com/taizilongxu/Wiki-site/raw/master/source/_posts/cgroup.md' target="_blank" rel="noopener"> Source </a>
                             </div>
                             <div class="article-meta-button">
-                                <a href='https://github.com/taizilongxu/Wiki-site/edit/master/source/_posts/Hackintosh/uefi_bios.md' target="_blank" rel="noopener"> Edit </a>
+                                <a href='https://github.com/taizilongxu/Wiki-site/edit/master/source/_posts/cgroup.md' target="_blank" rel="noopener"> Edit </a>
                             </div>
                             <div class="article-meta-button">
-                                <a href='https://github.com/taizilongxu/Wiki-site/commits/master/source/_posts/Hackintosh/uefi_bios.md' target="_blank" rel="noopener"> History </a>
+                                <a href='https://github.com/taizilongxu/Wiki-site/commits/master/source/_posts/cgroup.md' target="_blank" rel="noopener"> History </a>
                             </div>
                         
                     </div>
@@ -394,7 +385,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            UEFI 与 BIOS
+            cgroup
         </h1>
     
 
@@ -405,20 +396,9 @@
         
         
             
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">Catalogue</strong>
-                    
-                </div>
+        
+        
             
-        
-        
-            <p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg" alt=""></p>
-<ol>
-<li>1980s 开始 BIOS 系统</li>
-<li>应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用</li>
-<li>2007 年 UEFI 问世, 统一标准</li>
-</ol>
-
             </div>
         
         <footer class="article-footer">
@@ -430,19 +410,10 @@
     
 <nav id="article-nav">
     
-        <a href="/wiki/wiki/Hackintosh/principel/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    黑苹果原理
-                
-            </div>
-        </a>
     
-    
-        <a href="/wiki/wiki/Linux/env/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/wiki/wiki/Linux/boot/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">环境变量</div>
+            <div class="article-nav-title">Linux boot</div>
         </a>
     
 </nav>
