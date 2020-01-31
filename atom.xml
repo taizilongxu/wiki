@@ -6,7 +6,7 @@
   <link href="/wiki/atom.xml" rel="self"/>
   
   <link href="http://taizilongxu.github.io/wiki/"/>
-  <updated>2020-01-31T18:14:03.524Z</updated>
+  <updated>2020-01-31T18:17:39.622Z</updated>
   <id>http://taizilongxu.github.io/wiki/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Untitled/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Untitled/</id>
+    <title>编译原理</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/compiler/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/compiler/</id>
     <published>2020-01-31T18:14:03.524Z</published>
-    <updated>2020-01-31T18:14:03.524Z</updated>
+    <updated>2020-01-31T18:17:39.622Z</updated>
     
     <summary type="html">
     
@@ -336,33 +336,6 @@
   </entry>
   
   <entry>
-    <title>RAID</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</id>
-    <published>2020-01-15T12:06:59.165Z</published>
-    <updated>2020-01-15T12:06:59.165Z</updated>
-    
-    <content type="html"><![CDATA[<p>RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid_table.png" alt=""></p><h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>分散打在不同磁盘上, 写入速度 * n</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid0.png" alt=""></p><h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>镜像对考， 双写</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid1.png" alt=""></p><h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>校验块分布在不同磁盘上, 易于扩展</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid5.png" alt=""></p><h2 id="Raid-6"><a href="#Raid-6" class="headerlink" title="Raid 6"></a>Raid 6</h2><p>采用两种独立的校验算法</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid6.png" alt=""></p><h2 id="RAID-组合"><a href="#RAID-组合" class="headerlink" title="RAID 组合"></a>RAID 组合</h2><p>组合方式, 速度既快, 又有备份</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid01.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid10.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/ra
-      
-    
-    </summary>
-    
-    
-      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
-    
-      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>硬盘接口</title>
     <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/</id>
@@ -385,6 +358,33 @@
 &lt;th&gt;年份&lt;/th&gt;
 &lt;th&gt;带宽&lt;/th&gt;
 
+      
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
+    
+      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>RAID</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</id>
+    <published>2020-01-15T12:06:59.165Z</published>
+    <updated>2020-01-15T12:06:59.165Z</updated>
+    
+    <content type="html"><![CDATA[<p>RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid_table.png" alt=""></p><h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>分散打在不同磁盘上, 写入速度 * n</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid0.png" alt=""></p><h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>镜像对考， 双写</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid1.png" alt=""></p><h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>校验块分布在不同磁盘上, 易于扩展</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid5.png" alt=""></p><h2 id="Raid-6"><a href="#Raid-6" class="headerlink" title="Raid 6"></a>Raid 6</h2><p>采用两种独立的校验算法</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid6.png" alt=""></p><h2 id="RAID-组合"><a href="#RAID-组合" class="headerlink" title="RAID 组合"></a>RAID 组合</h2><p>组合方式, 速度既快, 又有备份</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid01.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid10.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/ra
       
     
     </summary>
