@@ -6,7 +6,7 @@
   <link href="/wiki/atom.xml" rel="self"/>
   
   <link href="http://taizilongxu.github.io/wiki/"/>
-  <updated>2020-01-22T07:00:40.944Z</updated>
+  <updated>2020-01-31T18:14:03.524Z</updated>
   <id>http://taizilongxu.github.io/wiki/</id>
   
   <author>
@@ -17,13 +17,88 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Untitled/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Untitled/</id>
+    <published>2020-01-31T18:14:03.524Z</published>
+    <updated>2020-01-31T18:14:03.524Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>switch 破解原理</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Hack/switch/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Hack/switch/</id>
+    <published>2020-01-27T02:26:51.862Z</published>
+    <updated>2020-01-31T18:16:27.562Z</updated>
+    
+    <content type="html"><![CDATA[<p>教程: <a href="https://github.com/ln93/kosmos_chs_tutorial" target="_blank" rel="noopener">https://github.com/ln93/kosmos_chs_tutorial</a></p><p>漏洞: Nvidia Tegra X1</p><p>破解原理: <a href="https://media.ccc.de/v/c4.openchaos.2018.06.glitching-the-switch#t=49" target="_blank" rel="noopener">https://media.ccc.de/v/c4.openchaos.2018.06.glitching-the-switch#t=49</a></p><p>破解原理简单版: <a href="https://www.youtube.com/watch?v=L3PPWVPg2WI&amp;vl=en" target="_blank" rel="noopener">https://www.youtube.com/watch?v=L3PPWVPg2WI&amp;vl=en</a></p><p>硬件参数:</p><ul><li>CPU: Tegra X1 T210</li><li>GPU: Nvidia Maxwell GPU</li><li>RAM: 4GB LPDDRR4</li></ul><p>大致破解原理:</p><ol><li><p>Tegra X1 有个 recovery 模式的漏洞, 这个是在和 switch 同样的硬件中发现的, 在 switch 里就是我们熟知的短接</p></li><li><p>这个漏洞主要利用 BootRom 启动的时候通过 USB 进行通讯</p><p>![image-20200128012739143](/Users/limbo/Library/Application Support/typora-user-images/image-20200128012739143.png)</p></li><li><p>USB 通讯有签名, 这个无法绕过</p><p>![image-20200128020009026](/Users/limbo/Library/Application Support/typora-user-images/image-20200128020009026.png)</p></li><li><p>但是可以控制通信协议长度, 让复制到 DMA 的内存溢出, 占用堆栈的地址, 函数返回的 stack 地址就可以接收系统控制权了</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200128020324.png" alt=""></p></li></ol><p>破解过程:</p><ol><li>TF 卡里先写入我们要接管的程序</li><li>通过短接 switch 进入 RCM 模式</li><li>通过 USB 连接电脑或者手机(注入 RCM), 通过注入跳转到我们写好的 TF 卡里的程序</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;教程: &lt;a href=&quot;https://github.com/ln93/kosmos_chs_tutorial&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/ln93/kosmos_chs_tutorial&lt;/a&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Hack" scheme="http://taizilongxu.github.io/wiki/categories/Hack/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>docker internal</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/docker/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/docker/</id>
+    <published>2020-01-22T09:29:30.607Z</published>
+    <updated>2020-01-22T09:37:30.338Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://medium.com/@nagarwal/understanding-the-docker-internals-7ccb052ce9fe" target="_blank" rel="noopener">https://medium.com/@nagarwal/understanding-the-docker-internals-7ccb052ce9fe</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://medium.com/@nagarwal/understanding-the-docker-internals-7ccb052ce9fe&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://medium.com/
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>cgroup</title>
     <link href="http://taizilongxu.github.io/wiki/wiki/cgroup/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/cgroup/</id>
     <published>2020-01-22T07:00:22.615Z</published>
-    <updated>2020-01-22T07:00:40.944Z</updated>
+    <updated>2020-01-22T09:47:58.135Z</updated>
+    
+    <content type="html"><![CDATA[<p>作用:</p><ul><li>资源限制</li><li>优先级分配</li><li>资源统计</li><li>任务控制</li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;作用:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;资源限制&lt;/li&gt;
+&lt;li&gt;优先级分配&lt;/li&gt;
+&lt;li&gt;资源统计&lt;/li&gt;
+&lt;li&gt;任务控制&lt;/li&gt;
+&lt;/ul&gt;
+
+      
     
     </summary>
     
@@ -36,9 +111,9 @@
     <link href="http://taizilongxu.github.io/wiki/wiki/Linux/boot/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/Linux/boot/</id>
     <published>2020-01-21T09:47:45.066Z</published>
-    <updated>2020-01-22T09:16:14.652Z</updated>
+    <updated>2020-01-22T10:24:24.895Z</updated>
     
-    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/" target="_blank" rel="noopener">http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121175449.png" alt=""></p><ol><li>BIOS: Basic Input/Output System 硬件检测, 自检完后找到 MBR 移交执行</li><li>MBR: Master Boot Record</li><li>GRUB:  Grand Unified Bootloader 负责选择多个系统 img</li><li>Kernal: Linux kenel 内核启动</li><li>init: 启动各种程序</li></ol><h2 id="BIOS-amp-UEFI"><a href="#BIOS-amp-UEFI" class="headerlink" title="BIOS &amp; UEFI"></a>BIOS &amp; UEFI</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg" alt=""></p><ol><li>1980s 开始 BIOS 系统</li><li>应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用</li><li>2007 年 UEFI 问世, 统一标准</li></ol><h2 id="MBR"><a href="#MBR" class="headerlink" title="MBR"></a>MBR</h2><figure class="highlight plain"><figcaption><span>GPT, 配合 UEFI 食用```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MBR:</span><br><span class="line"></span><br><span class="line">* 优点: 简单</span><br><span class="line">* 缺点: 只能 4 个分区, 不能识别大于 2T 的分区</span><br><span class="line"></span><br><span class="line">硬盘第一块 secotr 即为 MBR, 一般 512 bytes</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">sudo xxd -g 1 &#x2F;dev&#x2F;sda | head -40</span><br><span class="line"></span><br><span class="line">0000000: eb 63 90 10 8e d0 bc 00 b0 b8 00 00 8e d8 8e c0  .c..............</span><br><span class="line">0000010: fb be 00 7c bf 00 06 b9 00 02 f3 a4 ea 21 06 00  ...|.........!..</span><br><span class="line">0000020: 00 be be 07 38 04 75 0b 83 c6 10 81 fe fe 07 75  ....8.u........u</span><br><span class="line">0000030: f3 eb 16 b4 02 b0 01 bb 00 7c b2 80 8a 74 01 8b  .........|...t..</span><br><span class="line">0000040: 4c 02 cd 13 ea 00 7c 00 00 eb fe 00 00 00 00 00  L.....|.........</span><br></pre></td></tr></table></figure><p>MBR 结构:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122115921.png" alt=""></p><h2 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg/1280px-GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg.png" alt="img"></p><ul><li><p>boot.img: 严格占有 446 bytes, 主要作用就是调用 BIOS 来加载 core.img 的 sector 到内存</p></li><li><p>core.img: 写入位于 MBR 和第一分区之间的部分, 在 32256 bytes 以下, 并不用占满, 主要是 <code>GRUB 的内核</code>, 加载后掌握控制权</p></li><li><p>/boot/grub: 一些 grub 配置文件</p></li></ul><h2 id="Kernal"><a href="#Kernal" class="headerlink" title="Kernal"></a>Kernal</h2><p>Bootloader 进行 Kernal 的 img 镜像加载解压缩, 并给予控制权, 最后调用 init 进行其他启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121180904.png" alt=""></p><h2 id="System-V-amp-Systemd"><a href="#System-V-amp-Systemd" class="headerlink" title="System V &amp; Systemd"></a>System V &amp; Systemd</h2><p>kernal 会调用 <code>/sbin/init</code> 来启动 uid 为 1 的守护进程, 有两种选择</p><ul><li>System V: 注意这个启动是串行, 很少在用,  感兴趣可以了解下,  命令 <code>service</code></li><li>Systemd(地址会软链到<code>/lib/systemd/systemd</code>): 兼容 System V</li></ul><h3 id="System-V"><a href="#System-V" class="headerlink" title="System V"></a>System V</h3><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153855.png" alt=""></p><h3 id="Systemd"><a href="#Systemd" class="headerlink" title="Systemd"></a>Systemd</h3><p>配置地址: </p><ul><li><code>/lib/systemd/system</code> : 系统自带或程序自带安装地址</li><li><code>/etc/systemd/system</code>: 用户自定义, 可覆盖上面文件夹内容</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153923.png" alt=""></p><p>概念说明:</p><ul><li>target: target 也属于 Unit 一种,  是 Unit 的逻辑集合(和 System V 的运行级别概念相同), 同时还有个 <code>*.target.wants</code> 文件放置它所管理的 Unit</li><li>Unit: 最小单元, 分几种类型的资源, 例如 device, mount, target 和我们最常用的 service</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122162730.png" alt=""></p><p>上图启动 garphitcal.target 执行的依赖</p><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 常用</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl status/start/restart/stop/reload &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有正在运行的, 类型为 service 的 Unit</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-units --<span class="built_in">type</span>=service</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看依赖</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-dependencies &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看配置文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl cat &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看启动时的默认 Target</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl get-default</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看主机信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hostnamectl</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前登录用户</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-sessions</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-users</span></span><br></pre></td></tr></table></figure><p>日志管理:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看内核日志（不显示应用日志）</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -k</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定进程的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl _PID=1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个路径的脚本的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个 Unit 的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service --since today</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定时间的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since=<span class="string">"2012-10-30 18:17:16"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"20 min ago"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since yesterday</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"2015-01-10"</span> --until <span class="string">"2015-01-11 03:00"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since 09:00 --until <span class="string">"1 hour ago"</span></span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/" target="_blank" rel="noopener">http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121175449.png" alt=""></p><ol><li>BIOS: Basic Input/Output System 硬件检测, 自检完后找到 MBR 移交执行</li><li>MBR: Master Boot Record</li><li>GRUB:  Grand Unified Bootloader 负责选择多个系统 img</li><li>Kernal: Linux kenel 内核启动</li><li>init: 启动各种程序</li></ol><h2 id="BIOS-amp-UEFI"><a href="#BIOS-amp-UEFI" class="headerlink" title="BIOS &amp; UEFI"></a>BIOS &amp; UEFI</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg" alt=""></p><ol><li>1980s 开始 BIOS 系统</li><li>应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用</li><li>2007 年 UEFI 问世, 统一标准</li></ol><h2 id="MBR"><a href="#MBR" class="headerlink" title="MBR"></a>MBR</h2><figure class="highlight plain"><figcaption><span>GPT, 配合 UEFI 食用```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MBR:</span><br><span class="line"></span><br><span class="line">* 优点: 简单</span><br><span class="line">* 缺点: 只能 4 个分区, 不能识别大于 2T 的分区</span><br><span class="line"></span><br><span class="line">硬盘第一块 secotr 即为 MBR, 一般 512 bytes</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">sudo xxd -g 1 &#x2F;dev&#x2F;sda | head -40</span><br><span class="line"></span><br><span class="line">0000000: eb 63 90 10 8e d0 bc 00 b0 b8 00 00 8e d8 8e c0  .c..............</span><br><span class="line">0000010: fb be 00 7c bf 00 06 b9 00 02 f3 a4 ea 21 06 00  ...|.........!..</span><br><span class="line">0000020: 00 be be 07 38 04 75 0b 83 c6 10 81 fe fe 07 75  ....8.u........u</span><br><span class="line">0000030: f3 eb 16 b4 02 b0 01 bb 00 7c b2 80 8a 74 01 8b  .........|...t..</span><br><span class="line">0000040: 4c 02 cd 13 ea 00 7c 00 00 eb fe 00 00 00 00 00  L.....|.........</span><br></pre></td></tr></table></figure><p>MBR 结构:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122115921.png" alt=""></p><h2 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg/1280px-GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg.png" alt="img"></p><ul><li><p>boot.img: 严格占有 446 bytes, 主要作用就是调用 BIOS 来加载 core.img 的 sector 到内存</p></li><li><p>core.img: 写入位于 MBR 和第一分区之间的部分, 在 32256 bytes 以下, 并不用占满, 主要是 <code>GRUB 的内核</code>, 加载后掌握控制权</p></li><li><p>/boot/grub: 一些 grub 配置文件</p></li></ul><h2 id="Kernal"><a href="#Kernal" class="headerlink" title="Kernal"></a>Kernal</h2><p>Bootloader 进行 Kernal 的 img 镜像加载解压缩, 并给予控制权, 最后调用 init 进行其他启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121180904.png" alt=""></p><h2 id="System-V-amp-Systemd"><a href="#System-V-amp-Systemd" class="headerlink" title="System V &amp; Systemd"></a>System V &amp; Systemd</h2><p>kernal 会调用 <code>/sbin/init</code> 来启动 uid 为 1 的守护进程, 有两种选择</p><ul><li>System V: 注意这个启动是串行, 很少在用,  感兴趣可以了解下,  命令 <code>service</code></li><li>Upstart: 基于事件机制</li><li>Systemd(地址会软链到<code>/lib/systemd/systemd</code>): 兼容 System V</li></ul><h3 id="System-V"><a href="#System-V" class="headerlink" title="System V"></a>System V</h3><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153855.png" alt=""></p><h3 id="Systemd"><a href="#Systemd" class="headerlink" title="Systemd"></a>Systemd</h3><p>配置地址: </p><ul><li><code>/lib/systemd/system</code> : 系统自带或程序自带安装地址</li><li><code>/etc/systemd/system</code>: 用户自定义, 可覆盖上面文件夹内容</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153923.png" alt=""></p><p>概念说明:</p><ul><li>target: target 也属于 Unit 一种,  是 Unit 的逻辑集合(和 System V 的运行级别概念相同), 同时还有个 <code>*.target.wants</code> 文件放置它所管理的 Unit</li><li>Unit: 最小单元, 分几种类型的资源, 例如 device, mount, target 和我们最常用的 service</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122162730.png" alt=""></p><p>上图启动 garphitcal.target 执行的依赖</p><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 常用</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl status/start/restart/stop/reload &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有正在运行的, 类型为 service 的 Unit</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-units --<span class="built_in">type</span>=service</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看依赖</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-dependencies &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看配置文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl cat &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看启动时的默认 Target</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl get-default</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看主机信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hostnamectl</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前登录用户</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-sessions</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-users</span></span><br></pre></td></tr></table></figure><p>日志管理:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看内核日志（不显示应用日志）</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -k</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定进程的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl _PID=1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个路径的脚本的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个 Unit 的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service --since today</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定时间的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since=<span class="string">"2012-10-30 18:17:16"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"20 min ago"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since yesterday</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"2015-01-10"</span> --until <span class="string">"2015-01-11 03:00"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since 09:00 --until <span class="string">"1 hour ago"</span></span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -59,10 +134,10 @@
   
   <entry>
     <title>Class 文件结构</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/class_bytes/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/class_bytes/</id>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Language/Java/class_bytes/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Language/Java/class_bytes/</id>
     <published>2020-01-20T17:36:05.000Z</published>
-    <updated>2020-01-20T17:36:05.000Z</updated>
+    <updated>2020-01-22T09:30:11.132Z</updated>
     
     <content type="html"><![CDATA[<p>参考:</p><ul><li><a href="https://coolshell.cn/articles/9229.html" target="_blank" rel="noopener">https://coolshell.cn/articles/9229.html</a></li><li><a href="http://luckylau.tech/2017/05/26/你懂java吗-11/" target="_blank" rel="noopener">http://luckylau.tech/2017/05/26/%E4%BD%A0%E6%87%82java%E5%90%97-11/</a></li></ul><p><img src="http://luckylau.tech/2017/05/26/%E4%BD%A0%E6%87%82java%E5%90%97-11/1.png" alt="img"></p><h2 id="魔数"><a href="#魔数" class="headerlink" title="魔数"></a>魔数</h2><p>0XCAFEBABE </p><h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><p><img src="http://luckylau.tech/2017/05/26/%E4%BD%A0%E6%87%82java%E5%90%97-11/18.png" alt="img"></p><h2 id="常量池"><a href="#常量池" class="headerlink" title="常量池"></a>常量池</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121013404.png" alt=""></p><p><img src="http://luckylau.tech/2017/05/26/%E4%BD%A0%E6%87%82java%E5%90%97-11/4.png" alt="img"></p>]]></content>
     
@@ -77,6 +152,10 @@
     
     </summary>
     
+    
+      <category term="Language" scheme="http://taizilongxu.github.io/wiki/categories/Language/"/>
+    
+      <category term="Java" scheme="http://taizilongxu.github.io/wiki/categories/Language/Java/"/>
     
     
   </entry>
@@ -257,6 +336,33 @@
   </entry>
   
   <entry>
+    <title>RAID</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</id>
+    <published>2020-01-15T12:06:59.165Z</published>
+    <updated>2020-01-15T12:06:59.165Z</updated>
+    
+    <content type="html"><![CDATA[<p>RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid_table.png" alt=""></p><h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>分散打在不同磁盘上, 写入速度 * n</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid0.png" alt=""></p><h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>镜像对考， 双写</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid1.png" alt=""></p><h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>校验块分布在不同磁盘上, 易于扩展</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid5.png" alt=""></p><h2 id="Raid-6"><a href="#Raid-6" class="headerlink" title="Raid 6"></a>Raid 6</h2><p>采用两种独立的校验算法</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid6.png" alt=""></p><h2 id="RAID-组合"><a href="#RAID-组合" class="headerlink" title="RAID 组合"></a>RAID 组合</h2><p>组合方式, 速度既快, 又有备份</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid01.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid10.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/ra
+      
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
+    
+      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>硬盘接口</title>
     <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/</id>
@@ -279,33 +385,6 @@
 &lt;th&gt;年份&lt;/th&gt;
 &lt;th&gt;带宽&lt;/th&gt;
 
-      
-    
-    </summary>
-    
-    
-      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
-    
-      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>RAID</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</id>
-    <published>2020-01-15T12:06:59.165Z</published>
-    <updated>2020-01-15T12:06:59.165Z</updated>
-    
-    <content type="html"><![CDATA[<p>RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid_table.png" alt=""></p><h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>分散打在不同磁盘上, 写入速度 * n</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid0.png" alt=""></p><h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>镜像对考， 双写</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid1.png" alt=""></p><h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>校验块分布在不同磁盘上, 易于扩展</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid5.png" alt=""></p><h2 id="Raid-6"><a href="#Raid-6" class="headerlink" title="Raid 6"></a>Raid 6</h2><p>采用两种独立的校验算法</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid6.png" alt=""></p><h2 id="RAID-组合"><a href="#RAID-组合" class="headerlink" title="RAID 组合"></a>RAID 组合</h2><p>组合方式, 速度既快, 又有备份</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid01.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid10.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/ra
       
     
     </summary>
@@ -425,30 +504,6 @@
   </entry>
   
   <entry>
-    <title>unix 哲学</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/unix/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Linux/unix/</id>
-    <published>2019-11-12T08:14:06.000Z</published>
-    <updated>2020-01-15T12:06:59.172Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://zh.wikipedia.org/wiki/Unix%E5%93%B2
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>环境变量</title>
     <link href="http://taizilongxu.github.io/wiki/wiki/Linux/env/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/Linux/env/</id>
@@ -462,31 +517,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/env.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>shell navigation</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/shell_navigation/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Linux/shell_navigation/</id>
-    <published>2019-11-12T08:14:06.000Z</published>
-    <updated>2020-01-21T08:36:22.633Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/cli-navigation.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/cli-navigation.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 
       
     
