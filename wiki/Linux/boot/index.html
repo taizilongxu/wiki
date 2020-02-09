@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153923.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122162730.png">
 <meta property="article:published_time" content="2020-01-21T09:47:45.066Z">
-<meta property="article:modified_time" content="2020-01-22T10:24:24.895Z">
+<meta property="article:modified_time" content="2020-02-06T07:43:40.835Z">
 <meta property="article:author" content="Limbo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121175449.png">
@@ -247,7 +247,7 @@
                             &nbsp;
                             Disk
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hardware/Disk/interface/">硬盘接口</a></li>  <li class="file"><a href="/wiki/wiki/Hardware/Disk/raid/">RAID</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hardware/Disk/raid/">RAID</a></li>  <li class="file"><a href="/wiki/wiki/Hardware/Disk/interface/">硬盘接口</a></li>  </ul> 
                     </li> 
                      <li class="file"><a href="/wiki/wiki/Hardware/wifi/">Wi-Fi 协议</a></li>  </ul> 
                     </li> 
@@ -285,7 +285,7 @@
                             &nbsp;
                             Linux
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  <li class="file active"><a href="/wiki/wiki/Linux/boot/">Linux boot</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  <li class="file active"><a href="/wiki/wiki/Linux/boot/">Linux boot</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -296,7 +296,7 @@
                         </a>
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Tools/git/">Git 原理</a></li>  <li class="file"><a href="/wiki/wiki/Tools/ssh/">Ssh</a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/cgroup/">cgroup</a></li>  <li class="file"><a href="/wiki/wiki/docker/">docker internal</a></li>  <li class="file"><a href="/wiki/wiki/compiler/">编译原理</a></li>  </ul> 
+                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/cgroup/">cgroup</a></li>  <li class="file"><a href="/wiki/wiki/docker/">docker internal</a></li>  <li class="file"><a href="/wiki/wiki/compiler/">编译原理</a></li>  <li class="file"><a href="/wiki/wiki/ansible/"></a></li>  <li class="file"><a href="/wiki/wiki/saltstack/"></a></li>  <li class="file"><a href="/wiki/wiki/cfs/">CFS 调度算法</a></li>  <li class="file"><a href="/wiki/wiki/vfs/">虚拟文件系统</a></li>  </ul> 
     </div>
     <script>
         $(document).ready(function() {
@@ -453,12 +453,9 @@
 <p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122115921.png" alt=""></p>
 <h2 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg/1280px-GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg.png" alt="img"></p>
 <ul>
-<li><p>boot.img: 严格占有 446 bytes, 主要作用就是调用 BIOS 来加载 core.img 的 sector 到内存</p>
-</li>
-<li><p>core.img: 写入位于 MBR 和第一分区之间的部分, 在 32256 bytes 以下, 并不用占满, 主要是 <code>GRUB 的内核</code>, 加载后掌握控制权</p>
-</li>
-<li><p>/boot/grub: 一些 grub 配置文件</p>
-</li>
+<li>boot.img: 严格占有 446 bytes, 主要作用就是调用 BIOS 来加载 core.img 的 sector 到内存</li>
+<li>core.img: 写入位于 MBR 和第一分区之间的部分, 在 32256 bytes 以下, 并不用占满, 主要是 <code>GRUB 的内核</code>, 加载后掌握控制权</li>
+<li>/boot/grub: 一些 grub 配置文件</li>
 </ul>
 <h2 id="Kernal"><a href="#Kernal" class="headerlink" title="Kernal"></a>Kernal</h2><p>Bootloader 进行 Kernal 的 img 镜像加载解压缩, 并给予控制权, 最后调用 init 进行其他启动</p>
 <p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121180904.png" alt=""></p>
@@ -478,7 +475,7 @@
 <p>概念说明:</p>
 <ul>
 <li>target: target 也属于 Unit 一种,  是 Unit 的逻辑集合(和 System V 的运行级别概念相同), 同时还有个 <code>*.target.wants</code> 文件放置它所管理的 Unit</li>
-<li>Unit: 最小单元, 分几种类型的资源, 例如 device, mount, target 和我们最常用的 service</li>
+<li>Unit: <code>最小单元</code>, 分几种类型的资源, 例如 device, mount, target 和我们最常用的 service</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122162730.png" alt=""></p>
 <p>上图启动 garphitcal.target 执行的依赖</p>

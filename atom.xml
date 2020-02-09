@@ -6,7 +6,7 @@
   <link href="/wiki/atom.xml" rel="self"/>
   
   <link href="http://taizilongxu.github.io/wiki/"/>
-  <updated>2020-01-31T18:17:39.622Z</updated>
+  <updated>2020-02-09T15:55:23.562Z</updated>
   <id>http://taizilongxu.github.io/wiki/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>虚拟文件系统</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/vfs/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/vfs/</id>
+    <published>2020-02-09T15:54:44.180Z</published>
+    <updated>2020-02-09T15:55:23.562Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CFS 调度算法</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/cfs/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/cfs/</id>
+    <published>2020-02-06T16:08:13.922Z</published>
+    <updated>2020-02-06T17:24:48.559Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考:</p><ul><li><a href="https://blog.acean.vip/post/linux-kernel/gai-shu-linuxnei-he-san-jia-ma-che-zhi-jin-cheng-guan-li" target="_blank" rel="noopener">https://blog.acean.vip/post/linux-kernel/gai-shu-linuxnei-he-san-jia-ma-che-zhi-jin-cheng-guan-li</a></li></ul><p>Completely Fair Scheduler: 完全公平调度器</p><ul><li>核内调度</li><li>只处理 TASK_RUNINNG 状态的 task_struct</li><li>只针对 normal 线程</li></ul><p>算法关键:</p><ul><li><p>红黑树</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200207012316.png" alt=""></p></li><li><p><code>vtime = ptime * 1024 / weight</code> ptime 为实际执行时间, weight 为 权重, 跟你 nice 值对应</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.acean.vip/post/linux-kernel/gai-shu-linuxnei-he-san-jia-ma-che-zhi-jin-cheng-guan-li&quot; target=&quot;_bla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/saltstack/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/saltstack/</id>
+    <published>2020-02-02T16:48:46.058Z</published>
+    <updated>2020-02-02T16:48:49.929Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/ansible/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/ansible/</id>
+    <published>2020-02-02T16:48:36.601Z</published>
+    <updated>2020-02-02T16:48:43.478Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>编译原理</title>
@@ -82,22 +151,17 @@
     <link href="http://taizilongxu.github.io/wiki/wiki/cgroup/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/cgroup/</id>
     <published>2020-01-22T07:00:22.615Z</published>
-    <updated>2020-01-22T09:47:58.135Z</updated>
+    <updated>2020-02-09T16:25:57.837Z</updated>
     
-    <content type="html"><![CDATA[<p>作用:</p><ul><li>资源限制</li><li>优先级分配</li><li>资源统计</li><li>任务控制</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="https://tech.meituan.com/2015/03/31/cgroups.html" target="_blank" rel="noopener">https://tech.meituan.com/2015/03/31/cgroups.html</a></li><li><a href="https://blog.csdn.net/zsj100213/article/details/89088446" target="_blank" rel="noopener">https://blog.csdn.net/zsj100213/article/details/89088446</a></li><li><a href="http://www.manongjc.com/article/7475.html" target="_blank" rel="noopener">http://www.manongjc.com/article/7475.html</a></li></ul><h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>cgroups(contol groups), google 工程师提出, 整合进 Linux 内核, 是 LXC 的基础</p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p> 限制单个进程或多个进程使用资源, 可以对  cpu, mem 实现精细化的控制</p><ul><li>资源限制</li><li>优先级分配</li><li>资源统计</li><li>任务控制</li></ul><h2 id="整体框架"><a href="#整体框架" class="headerlink" title="整体框架"></a>整体框架</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200209234834.png" alt=""></p><ul><li>Filesystem: 类似于 /proc</li><li>subsystem: 可配置资源, 例如 cpu, mem</li><li>task: 进程在 cgroup 里称为 task, taskid 为 pid</li><li>libcgroup: 开源软件, 方便配置</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206175136.png" alt=""></p><p>说明:</p><ul><li>第一层为 subsystem, 对应不通的物理资源</li><li>第二层为 cgroup 结构体, 描述对应子系统的资源占用</li><li>css_set(cgroup subststem set) 辅助数据结构, 描述所有资源限制</li><li>P 进程, 一个进程对应一个 css_set</li></ul><h2 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h2><p>查看挂载点</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mount | grep cgroup</span></span><br><span class="line">tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)  # tmpfs 内存临时文件呢</span><br><span class="line">cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)</span><br><span class="line">cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)</span><br><span class="line">cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)</span><br><span class="line">cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)</span><br><span class="line">cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)</span><br><span class="line">cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)</span><br><span class="line">cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)</span><br><span class="line">cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)</span><br></pre></td></tr></table></figure><p>查看子系统</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ll /sys/fs/cgroup</span></span><br><span class="line">total 0</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 blkio</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpu -&gt; cpu,cpuacct</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpuacct -&gt; cpu,cpuacct</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 cpu,cpuacct</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 cpuset</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 devices</span><br><span class="line">drwxr-xr-x 4 root root  0 Nov 17  2018 freezer</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 hugetlb</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 memory</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 net_cls</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 perf_event</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 systemd</span><br></pre></td></tr></table></figure><p>查看进程 cgroup</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /proc/135/cgroup</span></span><br><span class="line">10:memory:/</span><br><span class="line">9:cpuset:/</span><br><span class="line">8:hugetlb:/</span><br><span class="line">7:perf_event:/</span><br><span class="line">6:net_cls:/</span><br><span class="line">5:freezer:/</span><br><span class="line">4:blkio:/</span><br><span class="line">3:cpuacct,cpu:/</span><br><span class="line">2:devices:/</span><br><span class="line">1:name=systemd:/</span><br></pre></td></tr></table></figure><h2 id="内存限制"><a href="#内存限制" class="headerlink" title="内存限制"></a>内存限制</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /sys/fs/cgroup/memory/memory.oom_control</span></span><br><span class="line">oom_kill_disable 0</span><br><span class="line">under_oom 0</span><br></pre></td></tr></table></figure><p>oom_kill_disable == 1: 程序进入休眠状态</p><p>oom_kill_disable == 0: 操作系统杀死</p><p>配置项</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>memory.usage_in_bytes</td><td>当前内存中的使用量</td></tr><tr><td>memory.memsw.usage_in_bytes</td><td>当前内存和交换空间中的使用量</td></tr><tr><td>memory.limit_in_bytes</td><td>设置or查看内存使用量</td></tr><tr><td>memory.memsw.limit_in_bytes</td><td>设置or查看 内存加交换空间使用量</td></tr><tr><td>memory.failcnt</td><td>查看内存使用量被限制的次数</td></tr><tr><td>memory.memsw.failcnt</td><td>查看内存和交换空间使用量被限制的次数</td></tr><tr><td>memory.max_usage_in_bytes</td><td>查看内存最大使用量</td></tr><tr><td>memory.memsw.max_usage_in_bytes</td><td>查看最大内存和交换空间使用量</td></tr><tr><td>memory.soft_limit_in_bytes</td><td>设置or查看内存的soft limit</td></tr><tr><td>memory.stat</td><td>统计信息</td></tr><tr><td>memory.use_hierarchy</td><td>设置or查看层级统计的功能</td></tr><tr><td>memory.force_empty</td><td>触发强制page回收</td></tr><tr><td>memory.pressure_level</td><td>设置内存压力通知</td></tr><tr><td>memory.swappiness</td><td>设置or查看vmscan swappiness 参数</td></tr><tr><td>memory.move_charge_at_immigrate</td><td>设置or查看 controls of moving charges</td></tr><tr><td>memory.oom_control</td><td>设置or查看内存超限控制信息(OOM killer)</td></tr><tr><td>memory.numa_stat</td><td>每个numa节点的内存使用数量</td></tr></tbody></table><p>内核 mem 控制:</p><ul><li>memory.kmem.limit_in_bytes # 设置or查看 内核内存限制的硬限</li><li>memory.kmem.usage_in_bytes # 读取当前内核内存的分配</li><li>memory.kmem.failcnt # 读取当前内核内存分配受限的次数</li><li>memory.kmem.max_usage_in_bytes # 读取最大内核内存使用量</li><li>memory.kmem.tcp.limit_in_bytes # 设置tcp 缓存内存的hard limit</li><li>memory.kmem.tcp.usage_in_bytes # 读取tcp 缓存内存的使用量</li><li>memory.kmem.tcp.failcnt # tcp 缓存内存分配的受限次数</li><li>memory.kmem.tcp.max_usage_in_bytes # tcp 缓存内存的最大使用量</li></ul><h2 id="CPU-限制"><a href="#CPU-限制" class="headerlink" title="CPU 限制"></a>CPU 限制</h2><ol><li>cpuset 以核心的方式进行隔离</li><li>cpuquota 以 cpu 使用比率限制, 保证比率上限</li><li>cpusharess 以权重比率弹性分配, 保证最低占用时间比率</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[&#x2F;sys&#x2F;fs&#x2F;cgroup&#x2F;cpu]$ ll</span><br><span class="line">total 0</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.clone_children</span><br><span class="line">--w--w--w-   1 root root 0 Nov 17  2018 cgroup.event_control</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.procs</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cgroup.sane_behavior</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpuacct.usage</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.usage_percpu</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_quota_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_runtime_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.shares</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpu.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 notify_on_release</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 release_agent</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 tasks</span><br></pre></td></tr></table></figure><p>配置项</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>cpuset.cpus</td><td>可以使用的cpu节点</td></tr><tr><td>cpuset.mems:</td><td>可以使用的mem节点</td></tr><tr><td>cpuset.memory_migrate</td><td>内存节点改变是否要迁移</td></tr><tr><td>cpuset.cpu_exclusive</td><td>此cgroup里的任务是否独享cpu</td></tr><tr><td>cpuset.mem_exclusive</td><td>此cgroup里的任务是否独享mem节点</td></tr><tr><td>cpuset.mem_hardwall</td><td>限制内核内存分配的节点（mems是用户态的分配）</td></tr><tr><td>cpuset.memory_pressure</td><td>计算换页的压力</td></tr><tr><td>cpuset.memory_spread_page</td><td>将page cache分配到各个节点中，而不是当前内存节点</td></tr><tr><td>cpuset.memory_spread_slab</td><td>将slab对象(inode和dentry)分散到节点中</td></tr><tr><td>cpuset.sched_load_balance</td><td>打开cpu set中的cpu的负载均衡</td></tr><tr><td>cpuset.sched_relax_domain_level</td><td>the searching range when migrating tasks</td></tr><tr><td>cpuset.memory_pressure_enabled</td><td>是否需要计算 memory_pressure</td></tr></tbody></table><h2 id="cgroup-与-systemd-关系"><a href="#cgroup-与-systemd-关系" class="headerlink" title="cgroup 与 systemd 关系"></a>cgroup 与 systemd 关系</h2><p>其实没啥关系, 但是 systemd 兼容 cgroup, 可以在 cgroup 之上启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206232211.png" alt=""></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;作用:&lt;/p&gt;
+        &lt;p&gt;参考资料:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;资源限制&lt;/li&gt;
-&lt;li&gt;优先级分配&lt;/li&gt;
-&lt;li&gt;资源统计&lt;/li&gt;
-&lt;li&gt;任务控制&lt;/li&gt;
-&lt;/ul&gt;
-
+&lt;li&gt;&lt;a href=&quot;https://tech.meituan.com/2015/03/31/cgroups.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://tech.meituan.com/201
       
     
     </summary>
@@ -111,9 +175,9 @@
     <link href="http://taizilongxu.github.io/wiki/wiki/Linux/boot/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/Linux/boot/</id>
     <published>2020-01-21T09:47:45.066Z</published>
-    <updated>2020-01-22T10:24:24.895Z</updated>
+    <updated>2020-02-06T07:43:40.835Z</updated>
     
-    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/" target="_blank" rel="noopener">http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121175449.png" alt=""></p><ol><li>BIOS: Basic Input/Output System 硬件检测, 自检完后找到 MBR 移交执行</li><li>MBR: Master Boot Record</li><li>GRUB:  Grand Unified Bootloader 负责选择多个系统 img</li><li>Kernal: Linux kenel 内核启动</li><li>init: 启动各种程序</li></ol><h2 id="BIOS-amp-UEFI"><a href="#BIOS-amp-UEFI" class="headerlink" title="BIOS &amp; UEFI"></a>BIOS &amp; UEFI</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg" alt=""></p><ol><li>1980s 开始 BIOS 系统</li><li>应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用</li><li>2007 年 UEFI 问世, 统一标准</li></ol><h2 id="MBR"><a href="#MBR" class="headerlink" title="MBR"></a>MBR</h2><figure class="highlight plain"><figcaption><span>GPT, 配合 UEFI 食用```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MBR:</span><br><span class="line"></span><br><span class="line">* 优点: 简单</span><br><span class="line">* 缺点: 只能 4 个分区, 不能识别大于 2T 的分区</span><br><span class="line"></span><br><span class="line">硬盘第一块 secotr 即为 MBR, 一般 512 bytes</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">sudo xxd -g 1 &#x2F;dev&#x2F;sda | head -40</span><br><span class="line"></span><br><span class="line">0000000: eb 63 90 10 8e d0 bc 00 b0 b8 00 00 8e d8 8e c0  .c..............</span><br><span class="line">0000010: fb be 00 7c bf 00 06 b9 00 02 f3 a4 ea 21 06 00  ...|.........!..</span><br><span class="line">0000020: 00 be be 07 38 04 75 0b 83 c6 10 81 fe fe 07 75  ....8.u........u</span><br><span class="line">0000030: f3 eb 16 b4 02 b0 01 bb 00 7c b2 80 8a 74 01 8b  .........|...t..</span><br><span class="line">0000040: 4c 02 cd 13 ea 00 7c 00 00 eb fe 00 00 00 00 00  L.....|.........</span><br></pre></td></tr></table></figure><p>MBR 结构:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122115921.png" alt=""></p><h2 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg/1280px-GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg.png" alt="img"></p><ul><li><p>boot.img: 严格占有 446 bytes, 主要作用就是调用 BIOS 来加载 core.img 的 sector 到内存</p></li><li><p>core.img: 写入位于 MBR 和第一分区之间的部分, 在 32256 bytes 以下, 并不用占满, 主要是 <code>GRUB 的内核</code>, 加载后掌握控制权</p></li><li><p>/boot/grub: 一些 grub 配置文件</p></li></ul><h2 id="Kernal"><a href="#Kernal" class="headerlink" title="Kernal"></a>Kernal</h2><p>Bootloader 进行 Kernal 的 img 镜像加载解压缩, 并给予控制权, 最后调用 init 进行其他启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121180904.png" alt=""></p><h2 id="System-V-amp-Systemd"><a href="#System-V-amp-Systemd" class="headerlink" title="System V &amp; Systemd"></a>System V &amp; Systemd</h2><p>kernal 会调用 <code>/sbin/init</code> 来启动 uid 为 1 的守护进程, 有两种选择</p><ul><li>System V: 注意这个启动是串行, 很少在用,  感兴趣可以了解下,  命令 <code>service</code></li><li>Upstart: 基于事件机制</li><li>Systemd(地址会软链到<code>/lib/systemd/systemd</code>): 兼容 System V</li></ul><h3 id="System-V"><a href="#System-V" class="headerlink" title="System V"></a>System V</h3><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153855.png" alt=""></p><h3 id="Systemd"><a href="#Systemd" class="headerlink" title="Systemd"></a>Systemd</h3><p>配置地址: </p><ul><li><code>/lib/systemd/system</code> : 系统自带或程序自带安装地址</li><li><code>/etc/systemd/system</code>: 用户自定义, 可覆盖上面文件夹内容</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153923.png" alt=""></p><p>概念说明:</p><ul><li>target: target 也属于 Unit 一种,  是 Unit 的逻辑集合(和 System V 的运行级别概念相同), 同时还有个 <code>*.target.wants</code> 文件放置它所管理的 Unit</li><li>Unit: 最小单元, 分几种类型的资源, 例如 device, mount, target 和我们最常用的 service</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122162730.png" alt=""></p><p>上图启动 garphitcal.target 执行的依赖</p><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 常用</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl status/start/restart/stop/reload &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有正在运行的, 类型为 service 的 Unit</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-units --<span class="built_in">type</span>=service</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看依赖</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-dependencies &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看配置文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl cat &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看启动时的默认 Target</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl get-default</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看主机信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hostnamectl</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前登录用户</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-sessions</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-users</span></span><br></pre></td></tr></table></figure><p>日志管理:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看内核日志（不显示应用日志）</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -k</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定进程的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl _PID=1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个路径的脚本的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个 Unit 的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service --since today</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定时间的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since=<span class="string">"2012-10-30 18:17:16"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"20 min ago"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since yesterday</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"2015-01-10"</span> --until <span class="string">"2015-01-11 03:00"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since 09:00 --until <span class="string">"1 hour ago"</span></span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/" target="_blank" rel="noopener">http://www.nixhacker.com/explaining-the-magic-of-mbr-and-its/</a></li><li><a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html</a></li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121175449.png" alt=""></p><ol><li>BIOS: Basic Input/Output System 硬件检测, 自检完后找到 MBR 移交执行</li><li>MBR: Master Boot Record</li><li>GRUB:  Grand Unified Bootloader 负责选择多个系统 img</li><li>Kernal: Linux kenel 内核启动</li><li>init: 启动各种程序</li></ol><h2 id="BIOS-amp-UEFI"><a href="#BIOS-amp-UEFI" class="headerlink" title="BIOS &amp; UEFI"></a>BIOS &amp; UEFI</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/maxresdefault.jpg" alt=""></p><ol><li>1980s 开始 BIOS 系统</li><li>应对 BIOS 限制, 2006 年 Intel 开发 EFI, 苹果采用</li><li>2007 年 UEFI 问世, 统一标准</li></ol><h2 id="MBR"><a href="#MBR" class="headerlink" title="MBR"></a>MBR</h2><figure class="highlight plain"><figcaption><span>GPT, 配合 UEFI 食用```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">MBR:</span><br><span class="line"></span><br><span class="line">* 优点: 简单</span><br><span class="line">* 缺点: 只能 4 个分区, 不能识别大于 2T 的分区</span><br><span class="line"></span><br><span class="line">硬盘第一块 secotr 即为 MBR, 一般 512 bytes</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">sudo xxd -g 1 &#x2F;dev&#x2F;sda | head -40</span><br><span class="line"></span><br><span class="line">0000000: eb 63 90 10 8e d0 bc 00 b0 b8 00 00 8e d8 8e c0  .c..............</span><br><span class="line">0000010: fb be 00 7c bf 00 06 b9 00 02 f3 a4 ea 21 06 00  ...|.........!..</span><br><span class="line">0000020: 00 be be 07 38 04 75 0b 83 c6 10 81 fe fe 07 75  ....8.u........u</span><br><span class="line">0000030: f3 eb 16 b4 02 b0 01 bb 00 7c b2 80 8a 74 01 8b  .........|...t..</span><br><span class="line">0000040: 4c 02 cd 13 ea 00 7c 00 00 eb fe 00 00 00 00 00  L.....|.........</span><br></pre></td></tr></table></figure><p>MBR 结构:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122115921.png" alt=""></p><h2 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h2><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg/1280px-GNU_GRUB_on_MBR_partitioned_hard_disk_drives.svg.png" alt="img"></p><ul><li>boot.img: 严格占有 446 bytes, 主要作用就是调用 BIOS 来加载 core.img 的 sector 到内存</li><li>core.img: 写入位于 MBR 和第一分区之间的部分, 在 32256 bytes 以下, 并不用占满, 主要是 <code>GRUB 的内核</code>, 加载后掌握控制权</li><li>/boot/grub: 一些 grub 配置文件</li></ul><h2 id="Kernal"><a href="#Kernal" class="headerlink" title="Kernal"></a>Kernal</h2><p>Bootloader 进行 Kernal 的 img 镜像加载解压缩, 并给予控制权, 最后调用 init 进行其他启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200121180904.png" alt=""></p><h2 id="System-V-amp-Systemd"><a href="#System-V-amp-Systemd" class="headerlink" title="System V &amp; Systemd"></a>System V &amp; Systemd</h2><p>kernal 会调用 <code>/sbin/init</code> 来启动 uid 为 1 的守护进程, 有两种选择</p><ul><li>System V: 注意这个启动是串行, 很少在用,  感兴趣可以了解下,  命令 <code>service</code></li><li>Upstart: 基于事件机制</li><li>Systemd(地址会软链到<code>/lib/systemd/systemd</code>): 兼容 System V</li></ul><h3 id="System-V"><a href="#System-V" class="headerlink" title="System V"></a>System V</h3><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153855.png" alt=""></p><h3 id="Systemd"><a href="#Systemd" class="headerlink" title="Systemd"></a>Systemd</h3><p>配置地址: </p><ul><li><code>/lib/systemd/system</code> : 系统自带或程序自带安装地址</li><li><code>/etc/systemd/system</code>: 用户自定义, 可覆盖上面文件夹内容</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122153923.png" alt=""></p><p>概念说明:</p><ul><li>target: target 也属于 Unit 一种,  是 Unit 的逻辑集合(和 System V 的运行级别概念相同), 同时还有个 <code>*.target.wants</code> 文件放置它所管理的 Unit</li><li>Unit: <code>最小单元</code>, 分几种类型的资源, 例如 device, mount, target 和我们最常用的 service</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200122162730.png" alt=""></p><p>上图启动 garphitcal.target 执行的依赖</p><p>常用命令:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 常用</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl status/start/restart/stop/reload &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有正在运行的, 类型为 service 的 Unit</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-units --<span class="built_in">type</span>=service</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看依赖</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl list-dependencies &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看配置文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl cat &lt;service&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看启动时的默认 Target</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl get-default</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看主机信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hostnamectl</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看当前登录用户</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-sessions</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> loginctl list-users</span></span><br></pre></td></tr></table></figure><p>日志管理:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看内核日志（不显示应用日志）</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -k</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定进程的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl _PID=1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个路径的脚本的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl /usr/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某个 Unit 的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl -u nginx.service --since today</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定时间的日志</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since=<span class="string">"2012-10-30 18:17:16"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"20 min ago"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since yesterday</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since <span class="string">"2015-01-10"</span> --until <span class="string">"2015-01-11 03:00"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo journalctl --since 09:00 --until <span class="string">"1 hour ago"</span></span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -196,7 +260,7 @@
     <link href="http://taizilongxu.github.io/wiki/wiki/index/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/index/</id>
     <published>2020-01-20T15:45:04.000Z</published>
-    <updated>2020-01-22T04:36:45.628Z</updated>
+    <updated>2020-02-05T06:27:23.231Z</updated>
     
     <summary type="html">
     
@@ -336,6 +400,33 @@
   </entry>
   
   <entry>
+    <title>RAID</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</id>
+    <published>2020-01-15T12:06:59.165Z</published>
+    <updated>2020-01-15T12:06:59.165Z</updated>
+    
+    <content type="html"><![CDATA[<p>RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid_table.png" alt=""></p><h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>分散打在不同磁盘上, 写入速度 * n</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid0.png" alt=""></p><h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>镜像对考， 双写</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid1.png" alt=""></p><h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>校验块分布在不同磁盘上, 易于扩展</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid5.png" alt=""></p><h2 id="Raid-6"><a href="#Raid-6" class="headerlink" title="Raid 6"></a>Raid 6</h2><p>采用两种独立的校验算法</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid6.png" alt=""></p><h2 id="RAID-组合"><a href="#RAID-组合" class="headerlink" title="RAID 组合"></a>RAID 组合</h2><p>组合方式, 速度既快, 又有备份</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid01.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid10.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/ra
+      
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
+    
+      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>硬盘接口</title>
     <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/</id>
@@ -358,33 +449,6 @@
 &lt;th&gt;年份&lt;/th&gt;
 &lt;th&gt;带宽&lt;/th&gt;
 
-      
-    
-    </summary>
-    
-    
-      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
-    
-      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>RAID</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</id>
-    <published>2020-01-15T12:06:59.165Z</published>
-    <updated>2020-01-15T12:06:59.165Z</updated>
-    
-    <content type="html"><![CDATA[<p>RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid_table.png" alt=""></p><h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>分散打在不同磁盘上, 写入速度 * n</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid0.png" alt=""></p><h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>镜像对考， 双写</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid1.png" alt=""></p><h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>校验块分布在不同磁盘上, 易于扩展</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid5.png" alt=""></p><h2 id="Raid-6"><a href="#Raid-6" class="headerlink" title="Raid 6"></a>Raid 6</h2><p>采用两种独立的校验算法</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid6.png" alt=""></p><h2 id="RAID-组合"><a href="#RAID-组合" class="headerlink" title="RAID 组合"></a>RAID 组合</h2><p>组合方式, 速度既快, 又有备份</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid01.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid10.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/ra
       
     
     </summary>
@@ -424,106 +488,6 @@
     
     
       <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Blog/hello-world/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Blog/hello-world/</id>
-    <published>2020-01-15T12:06:59.162Z</published>
-    <updated>2020-01-20T16:16:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-      <category term="Blog" scheme="http://taizilongxu.github.io/wiki/categories/Blog/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Flink 如何工作的?</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/BigData/flink/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/BigData/flink/</id>
-    <published>2019-12-17T12:19:05.000Z</published>
-    <updated>2020-01-15T12:06:59.175Z</updated>
-    
-    <content type="html"><![CDATA[<p>Flink 是如何工作的?</p><p>本文主要分为两个部分, 分别介绍 Flink 集群的启动和 Flink 任务如何运行在集群中(Stream 方式), 由于篇幅有限, 本文尽量不探讨具体的实现细节,但是比较重要的部分给予一定的说明, 更多的是让读者了解 Flink 内部的工作原理.</p><p>Flink 在部署上主要分为两部分 JobManager 和 TaskManager, JobManager 主要负责任务的分发, slot 资源管理等, TaskManager 则主要负责任务的运行. 下面这张官网的架构图虽然年代有点久远, 但至今大部分功能还是如图所述.</p><p><img src="https://ci.apache.org/projects/flink/flink-docs-release-1.9/fig/processes.svg" alt=""></p><p>从上面图中需要了解的信息:</p><ol><li>Flink 代码在客户端里进行了”编译”, 然后提交给 JobManager, 这里比较重要, 因为很多 Optimizer 的东西都可以在这里做</li><li>JobManager 拿到”编译”后的 job 再分发到各个 TaskManager 的 Slot 里</li><li>Flink 有两种通信方式, 远程调用使用的是 Actor, TaskManager 数据传输使用的是 Netty</li><li>JobManager 集成了 Scheduler 和 Checkpoint Coordinator 等主要功能 </li></ol><h1 id="1-Flink-集群的启动"><a href="#1-Flink-集群的启动" class="headerlink" title="1 Flink 集群的启动"></a>1 Flink 集群的启动</h1><p>Flink 集群的启动方式主要分为以下 3 种:</p><ol><li>Standalone 方式: 最基础的方式, 具有完整的功能, 可在实体机上进行部署</li><li>Cluster session 方式: 部署在像 Yarn , K8s 等资源调度框架内, 直接建立起集群, 然后通过与 JobManager 交互来提交作业, 但是在实际生产过程中发现有严重的 Bug 还没有解决,  可参看 <a href="https://issues.apache.org/jira/browse/FLINK-11205" target="_blank" rel="noopener">FLINK-11205</a> , 主要是 Metaspace 空间无法释放导致 TaskManager 被 kill, 而一个集群里存在多个 TaskManager 问题更加严重, 会导致整个集群 Taskmanager 不断重启.</li><li>Per Job 方式: 在 Yarn 中已经很好的集成了这种方式, 就是整个集群的生命周期和任务进行绑定, 任务结束, 集群资源也随着撤销, 唯一的缺点就是部署时间上不如 Cluster session 的方式, 这点其实在实际生产中可以忽略.</li></ol><h2 id="1-1-JobManager-的启动"><a href="#1-1-JobManager-的启动" class="headerlink" title="1.1 JobManager 的启动"></a>1.1 JobManager 的启动</h2><p>因为版本变动的关系 Jobmanager 在 1.5 版本的时候进行了一次大改, 和上面的图可能略有不通, 具体可以参见 <a href="https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=65147077" target="_blank" rel="noopener">FLIP-6</a>, 下面聊一聊一般生产中 JobManager 如何启动的.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/source_global.png" alt=""></p><p>上图可以看出在 1.5 以后的新版本中 JobManager 多出了两个组件, 一个是 ResourceManager, 主要负责管理 Flink 自己的 TaskManager 资源, 注意这个 ResourceManager 和 Yarn 上的不是同一个, 两者管理的资源不是同一级别, 第二个是 Dispatcher 主要是提供 client 的 RPC 接口, 提供发布任务的一系列功能. 而 JobMaster 主要负责一个任务的生命周期, 每个 Flink Job 都有一个 JobMaster 与之对应.</p><h2 id="1-2-TaskManager-的启动"><a href="#1-2-TaskManager-的启动" class="headerlink" title="1.2 TaskManager 的启动"></a>1.2 TaskManager 的启动</h2><p>TaskManager 其实功能比较简单, 提供一些基本的 RPC 服务, 供 JobManager 进行调度, 稍后会讲到 TaskManager 如何运行 JobManager 提供的 subTask.</p><h1 id="2-Flink-Job-的启动"><a href="#2-Flink-Job-的启动" class="headerlink" title="2 Flink Job 的启动"></a>2 Flink Job 的启动</h1><p>我们先来看看一个 Flink job 的构成</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/flink_job.png" alt=""></p><p>Flink job 最核心的构成其实就是这个 ENV, 用户需要通过调用 ENV 来注册用户的代码逻辑, 而这个 ENV 定义了一系列 DAG 生成的规则, 比如 env.addSource 我们必须指定 Source 的类型, 是 DataStream 还是 DataSet, 又比如 keyBy 之后返回的是 KeyedStream, 这些规则都是在 ENV 里进行了定义, 用户只要根据规则来使用即可, 而且根据 ENV 的定义我们可以在不同的环境中运行 Flink Job, 如下图所示:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/flink_job_env.png" alt=""></p><p>我们可以以 Flink 开发者的角度思考如何从用户代码到底层实现, 这一过程必然使用分层结构, 下面来看一下各个层级的工作:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/graph_all.png" alt=""></p><h2 id="2-1-Client-端"><a href="#2-1-Client-端" class="headerlink" title="2.1 Client 端"></a>2.1 Client 端</h2><p>首先在 Client 端生成的第一层是 User Rule, 这个算是用户代码到 DAG 的第一层抽象, 这里面制定了很多规则, 来约束用户的行为, 引导用户更好的使用 Flink 程序.</p><p>第二层是 Transformation 层, 这里的 Transformation 主要是完成了对用户的各个算子的定义, 比如说 addSource 的操作即为 SourceTransformation, filter 操作即为 OneInputTransformation, 这里面与用户的算子一一对应, 但是这里面区分定义了 PhysicalTransformation,  PhysicalTransformastion 可以理解为物理算子, 需要计算资源进行计算, 而 union, select 这些并非物理算子, 可以在后面的结构中通过网络 shuffle 进行合并, 在这一步我们得到的还是一个 Transformation 的列表, 完整的描述了用户定义的各个算子, 如下图所示:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/source_streamGraph.jpg" alt=""></p><p>第三层就是我们的 StreamGraph 了, 从 Transformation 转化而来, 构成了图的结构, 其中 StreamNode 为点, StreamEdge 为边, 在程序里存入的部分是一张链表结构, 如下图所示:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/source_streamGraph2.jpg" alt=""></p><p>这里面加入了一些信息, 比如说 slotSharingGroup, 从而定义这些算子如何在 slot 里分配</p><p>在 Client 里生成的最后一层即为 JobGraph, 这也是 Flink JobManager 接收的任务对象, 其实上一层的 StreamGraph 已经完成了任务 DAG , 为什么还需要 JobGraph 呢, 其实是为了兼容 Batch 模式, JobGraph 作为统一层进行封装, 同时提供了计算优化即 setChain 功能,  可以减小序列化和网络开销,  可能有的同学会对 chain 的概念有所疑惑 , 比如说 map 算子后面接入一个 filter 算子, 而且是同等数量的, 这样我就可以把 map 和 filter 抽象成一个计算进行自动优化, 要达到 chain 的条件比较苛刻, 具体可以查看代码</p><p>在 JobGraph 里主要结构就是 JobVertex 和 JobEdge, 在前面所说的 chain 方法后, 可以合并 两个或多个 StreamNode 为一个 JobVertex, 如下图所示:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/source_jobGraph.jpg" alt=""></p><p>好了这里基本就聊完了 Client 端的工作</p><h2 id="2-2-JobManager-端"><a href="#2-2-JobManager-端" class="headerlink" title="2.2 JobManager 端"></a>2.2 JobManager 端</h2><p>JobManager 端接收到 client 提交的 JobGraph, 根据 JobgRaph 来生成 ExcutionGraph, 这个 ExcutionGraph 简单来说就是 JobGraph 的并行版本, 定义具体执行的细节:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/source_executionGraph.jpg" alt=""></p><p>这里省略了一部分(其他部分一样), 主要来看看几个结构, ExecutionJobVertex 主要类似于 JobGraph 的 Node, 管理所有下面的并行状态, ExecutionVertex 是最小的执行单位(也是我们所说的 SubTask, 每个 SubTask 都由一个 thread 启动), 同理 IntermediateResult 负责多个 IntermediateResultPartition. 到这里完成了 ExecutionGraph, 而需要部署到 TaskManager 中间还需要为每个 Vertex 生成 TaskDeploymentDescriptor, 来描述在 TaskManager 中的具体任务, 比如 inputGates(输入), producedPartition(输出), 然后提交给 TaskManager</p><h2 id="2-3-TaskManager-端"><a href="#2-3-TaskManager-端" class="headerlink" title="2.3 TaskManager 端"></a>2.3 TaskManager 端</h2><p>上面提到 JobManager 生成 TaskDeploymentDescriptor 提交给 TaskManager, TaskManager 就比较好办了, 只需要设定这个 Task 的输入和输出还有 run 这个 Task 即可, 这一层就是所谓的物理执行层.</p><p>而对于分布在各个 TaskManager 上的 SubTask 是如何通信的呢, 可以看下图:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/image2019-10-14_11-34-38.png" alt=""></p><p>对于在同一个 TaskManager 内的 subTask, 通过 InputGate 和 ResultPartition 直接进行通信, 而对于不在同一个 TaskManager 里需要借助 Netty 层进行网络通信:</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/image2019-10-14_11-33-31.png" alt=""></p><p>还有一点值得注意的是, 当有消息来到时 ResultPartition 会给 InputGate 发送 notifyDataAvallable, 告诉下游该来取数了, 如果下游比较忙没空来取的话就会阻塞, 进而逐级向上传导产生被压, 这种缓冲 buffer 的方式是 flink 天然处理被压的方法.</p><p>至此整个 Flink Job 的流程已经结束, 但毕竟 Flink 是一个庞大的开源项目, 很多细节比如 Checkpoint 机制, 状态存储这些重要的概念还未涉及, 有兴趣的读者可以参考优秀的 Blog 进一步研究</p><p>参考资料:</p><ol><li><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.9/" target="_blank" rel="noopener">Flink 官网</a></li><li><a href="https://cwiki.apache.org/confluence/display/FLINK/Flink+Improvement+Proposals" target="_blank" rel="noopener">FLIP</a></li><li><a href="http://wuchong.me/" target="_blank" rel="noopener">Jark’s Blog</a></li><li><a href="http://chenyuzhao.me/" target="_blank" rel="noopener">玉兆的博客</a></li><li><a href="https://flink.apache.org/2019/06/05/flink-network-stack.html" target="_blank" rel="noopener">Flink 官方博客</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Flink 是如何工作的?&lt;/p&gt;
-&lt;p&gt;本文主要分为两个部分, 分别介绍 Flink 集群的启动和 Flink 任务如何运行在集群中(Stream 方式), 由于篇幅有限, 本文尽量不探讨具体的实现细节,但是比较重要的部分给予一定的说明, 更多的是让读者了解 Flink 
-      
-    
-    </summary>
-    
-    
-      <category term="BigData" scheme="http://taizilongxu.github.io/wiki/categories/BigData/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>黑苹果原理</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hackintosh/principel/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hackintosh/principel/</id>
-    <published>2019-12-08T12:19:05.000Z</published>
-    <updated>2020-01-15T12:06:59.170Z</updated>
-    
-    <content type="html"><![CDATA[<p>操作系统正常启动方式为 UEFI 或者 BIOS, 苹果因为需要各种验证所以中间需要进行一层 mock, 就是常见的 Clover</p><p>UEFI -&gt; Clover -&gt; Mac OS</p><p>所以说如果弄黑苹果最主要的是调整好苹果的 EFI 即可, 理论上可以无痛更新</p><p><a href="https://github.com/daliansky/Hackintosh" target="_blank" rel="noopener">https://github.com/daliansky/Hackintosh</a> 收集各种型号主机的 EFI</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="https://post.smzdm.com/p/a78enm0g/" target="_blank" rel="noopener">关于黑苹果你必须要知道的事儿</a></li><li><a href="https://www.tonymacx86.com/" target="_blank" rel="noopener">tonymacx86</a></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;操作系统正常启动方式为 UEFI 或者 BIOS, 苹果因为需要各种验证所以中间需要进行一层 mock, 就是常见的 Clover&lt;/p&gt;
-&lt;p&gt;UEFI -&amp;gt; Clover -&amp;gt; Mac OS&lt;/p&gt;
-&lt;p&gt;所以说如果弄黑苹果最主要的是调整好苹果的 EFI 即
-      
-    
-    </summary>
-    
-    
-      <category term="Hackintosh" scheme="http://taizilongxu.github.io/wiki/categories/Hackintosh/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>环境变量</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/env/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Linux/env/</id>
-    <published>2019-11-12T08:14:06.000Z</published>
-    <updated>2020-01-15T12:06:59.171Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/env.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/env.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
     
     
   </entry>
