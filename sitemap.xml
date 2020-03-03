@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/cgroup/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/GYM/gym/</loc>
     
-    <lastmod>2020-02-09T16:25:57.837Z</lastmod>
+    <lastmod>2020-02-24T17:23:27.687Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/download/</loc>
+    
+    <lastmod>2020-02-19T16:30:22.726Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/docker/</loc>
+    
+    <lastmod>2020-02-11T17:29:20.682Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/chroot/</loc>
+    
+    <lastmod>2020-02-11T17:28:04.630Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/namespace/</loc>
+    
+    <lastmod>2020-02-11T17:20:00.853Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/cgroup/</loc>
+    
+    <lastmod>2020-02-11T16:19:19.519Z</lastmod>
     
   </url>
   
@@ -16,7 +51,7 @@
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/cfs/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/cfs/</loc>
     
     <lastmod>2020-02-06T17:24:48.559Z</lastmod>
     
@@ -68,13 +103,6 @@
     <loc>http://taizilongxu.github.io/wiki/wiki/Hack/switch/</loc>
     
     <lastmod>2020-01-31T18:16:27.562Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/docker/</loc>
-    
-    <lastmod>2020-01-22T09:37:30.338Z</lastmod>
     
   </url>
   

@@ -6,7 +6,7 @@
   <link href="/wiki/atom.xml" rel="self"/>
   
   <link href="http://taizilongxu.github.io/wiki/"/>
-  <updated>2020-02-09T15:55:23.562Z</updated>
+  <updated>2020-02-19T16:30:22.726Z</updated>
   <id>http://taizilongxu.github.io/wiki/</id>
   
   <author>
@@ -15,6 +15,114 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>下载原理</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/download/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/download/</id>
+    <published>2020-02-19T16:29:58.638Z</published>
+    <updated>2020-02-19T16:30:22.726Z</updated>
+    
+    <content type="html"><![CDATA[<p> Torrent</p><p>Magnet</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; Torrent&lt;/p&gt;
+&lt;p&gt;Magnet&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>食材</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/GYM/gym/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/GYM/gym/</id>
+    <published>2020-02-18T13:46:07.435Z</published>
+    <updated>2020-02-24T17:23:27.687Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><ul><li>电饭锅</li><li>电磁炉: 米家电磁炉青春版</li><li>煎锅, 雪平锅</li><li>厨房纸</li><li>砧板</li><li>刀具: 三德刀基本够用, 后期升级可以加个切片刀</li></ul><h2 id="拌料"><a href="#拌料" class="headerlink" title="拌料"></a>拌料</h2><ul><li>橄榄油, PAM</li><li>黑胡椒</li><li>孜然</li><li>盐</li><li>酱油</li><li>料酒</li><li>耗油</li></ul><h2 id="食材"><a href="#食材" class="headerlink" title="食材"></a>食材</h2><p>蛋白质</p><table><thead><tr><th align="center">名称</th><th align="center">GI</th><th align="center">热量大卡</th><th align="center">常温存储</th><th align="center">冷藏存储</th><th align="center">冷冻存储</th></tr></thead><tbody><tr><td align="center">牛肉🐂</td><td align="center">46</td><td align="center">318</td><td align="center">2小时</td><td align="center">1-2天</td><td align="center">6-8月</td></tr><tr><td align="center">鸡胸肉🐓</td><td align="center">45</td><td align="center">200</td><td align="center">2小时</td><td align="center">1-2天</td><td align="center">1年</td></tr><tr><td align="center">龙利鱼🐟</td><td align="center">40</td><td align="center">67</td><td align="center">2小时</td><td align="center">1-2天</td><td align="center">6-9月</td></tr><tr><td align="center">金枪鱼🐟</td><td align="center">40</td><td align="center">99</td><td align="center">2小时</td><td align="center">1-2天</td><td align="center">6-9月</td></tr><tr><td align="center">沙丁鱼🐟</td><td align="center">40</td><td align="center">89</td><td align="center">2小时</td><td align="center">1-2天</td><td align="center">6-9月</td></tr><tr><td align="center">虾仁🍤</td><td align="center">40</td><td align="center">83</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">鸡蛋🥚</td><td align="center">30</td><td align="center">151</td><td align="center">数小时</td><td align="center">3-4周</td><td align="center">不可</td></tr><tr><td align="center">牛奶🥛</td><td align="center">25</td><td align="center">67</td><td align="center">数小时</td><td align="center">5-7天</td><td align="center">1个月</td></tr><tr><td align="center">培根🥓</td><td align="center">49</td><td align="center">405</td><td align="center">2小时</td><td align="center">2周</td><td align="center">4个月</td></tr></tbody></table><p>蔬菜</p><table><thead><tr><th align="center">名称</th><th align="center">GI</th><th align="center">热量大卡</th><th align="center">常温存储</th><th align="center">冷藏存储</th><th align="center">冷冻存储</th></tr></thead><tbody><tr><td align="center">玉米🌽</td><td align="center">70</td><td align="center">92</td><td align="center">1-3天</td><td align="center">1-2周</td><td align="center">3-5月</td></tr><tr><td align="center">红萝卜🥕</td><td align="center">80</td><td align="center">37</td><td align="center">4天</td><td align="center">4-5周</td><td align="center">8-12月</td></tr><tr><td align="center">马铃薯🥔</td><td align="center">90</td><td align="center">65</td><td align="center">1个月</td><td align="center">3-4月</td><td align="center">不可冷冻</td></tr><tr><td align="center">红薯</td><td align="center">76</td><td align="center">61</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">山药</td><td align="center">75</td><td align="center">50</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">番茄🍅</td><td align="center">30</td><td align="center">19</td><td align="center">5-7天</td><td align="center">2周</td><td align="center">8-12月</td></tr><tr><td align="center">黄瓜🥒</td><td align="center">23</td><td align="center">14</td><td align="center">1-3天</td><td align="center">1周</td><td align="center">8-12月</td></tr><tr><td align="center">西兰花🥦</td><td align="center">25</td><td align="center">36</td><td align="center">2天</td><td align="center">7-14天</td><td align="center">8-12月</td></tr><tr><td align="center">南瓜🎃</td><td align="center">65</td><td align="center">91</td><td align="center"></td><td align="center"></td><td align="center"></td></tr></tbody></table><p>主食</p><table><thead><tr><th align="center">名称</th><th align="center">GI</th><th align="center">热量大卡</th></tr></thead><tbody><tr><td align="center">米饭🍚</td><td align="center">84</td><td align="center">356</td></tr><tr><td align="center">馒头</td><td align="center">88</td><td align="center">233</td></tr><tr><td align="center">糙米🍚</td><td align="center">56</td><td align="center">350</td></tr><tr><td align="center">燕麦🥣</td><td align="center">55</td><td align="center">380</td></tr><tr><td align="center">全麦面包🍞</td><td align="center">50</td><td align="center">378</td></tr><tr><td align="center">黑麦面包🍞</td><td align="center">58</td><td align="center">264</td></tr><tr><td align="center">意大利面🍝</td><td align="center">55</td><td align="center">378</td></tr><tr><td align="center">荞麦面🍝</td><td align="center">59</td><td align="center">274</td></tr></tbody></table><p>水果</p><table><thead><tr><th align="center">名称</th><th align="center">GI</th><th align="center">热量大卡</th><th align="center">常温存储</th><th align="center">冷藏存储</th><th align="center">冷冻存储</th></tr></thead><tbody><tr><td align="center">香蕉🍌</td><td align="center">55</td><td align="center">154</td><td align="center">2-7天</td><td align="center">5-9天</td><td align="center">2-3个月</td></tr><tr><td align="center">芒果🥭</td><td align="center">49</td><td align="center">64</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">哈密瓜🍈</td><td align="center">41</td><td align="center">42</td><td align="center">熟透之前</td><td align="center">1周</td><td align="center">8-12月</td></tr><tr><td align="center">桃子🍑</td><td align="center">41</td><td align="center">40</td><td align="center">熟透之前</td><td align="center">2-5天</td><td align="center">8-12个月</td></tr><tr><td align="center">苹果🍎</td><td align="center">36</td><td align="center">54</td><td align="center">2-4周</td><td align="center">1-2月</td><td align="center">8-12月</td></tr><tr><td align="center">奇异果🥝</td><td align="center">35</td><td align="center">35</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">梨🍐</td><td align="center">32</td><td align="center">43</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">木瓜</td><td align="center">30</td><td align="center">38</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">橙子🍊</td><td align="center">31</td><td align="center">46</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">橘子🍊</td><td align="center">31</td><td align="center">60</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">柠檬🍋</td><td align="center">34</td><td align="center">54</td><td align="center">2-4周</td><td align="center">1-2月</td><td align="center">3-4月</td></tr><tr><td align="center">草莓🍓</td><td align="center">29</td><td align="center">34</td><td align="center">1-2天</td><td align="center">5-7天</td><td align="center">6-8个月</td></tr><tr><td align="center">葡萄🍇</td><td align="center">50</td><td align="center">55</td><td align="center">3-5天</td><td align="center">7-10天</td><td align="center">3-5个月</td></tr></tbody></table><h2 id="健身餐"><a href="#健身餐" class="headerlink" title="健身餐"></a>健身餐</h2><h3 id="牛排"><a href="#牛排" class="headerlink" title="牛排"></a>牛排</h3><p>素材</p><ul><li><p>牛排</p></li><li><p>橄榄油</p></li><li><p>黑胡椒</p></li><li><p>盐</p></li></ul><p>过程</p><ol><li>冷藏解冻, 室温解冻或者冷水解冻</li><li>不用水清洗, 用厨房纸擦干水分</li><li>室温回温至少 30 min 以上, 厚的 1 小时以上</li><li>抹上橄榄油, 两面用黑胡椒和盐调味</li><li>15s 一次翻面</li><li>醒肉</li><li>吃</li></ol><h3 id="电饭锅煮鸡蛋"><a href="#电饭锅煮鸡蛋" class="headerlink" title="电饭锅煮鸡蛋"></a>电饭锅煮鸡蛋</h3><p>素材</p><ul><li>鸡蛋</li><li>水</li></ul><p>过程</p><ul><li>电饭锅铺上餐厨纸</li><li>均匀浇上 100ml 水</li><li>等待跳闸后闷 5 分钟</li><li>拿出放入凉水冷却好扒皮</li></ul><h3 id="蒸紫薯"><a href="#蒸紫薯" class="headerlink" title="蒸紫薯"></a>蒸紫薯</h3><p>素材:</p><ul><li>紫薯</li></ul><p>过程</p><ul><li>切块</li><li>蒸 10-20 分钟</li><li>去皮搅碎即可</li></ul><h3 id="煎鸡胸肉"><a href="#煎鸡胸肉" class="headerlink" title="煎鸡胸肉"></a>煎鸡胸肉</h3><p>素材:</p><ul><li>鸡胸</li></ul><p>过程</p><ul><li>解冻, 室温或者流水</li><li>切片或块, 更容易煎, 然后倒入生抽, 料酒和耗油腌制 30 分钟<ul><li>生抽, 料酒, 耗油腌制</li><li>黑胡椒, 海盐</li><li>盐, 胡椒, 卡真粉</li></ul></li><li>大火煎至两面金黄色</li></ul><h3 id="意面"><a href="#意面" class="headerlink" title="意面"></a>意面</h3><p>素材:</p><ul><li>意面</li></ul><h3 id="燕麦片"><a href="#燕麦片" class="headerlink" title="燕麦片"></a>燕麦片</h3><ul><li><p>燕麦片</p></li><li><p>牛奶</p></li><li><p>香蕉</p></li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;硬件&quot;&gt;&lt;a href=&quot;#硬件&quot; class=&quot;headerlink&quot; title=&quot;硬件&quot;&gt;&lt;/a&gt;硬件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;电饭锅&lt;/li&gt;
+&lt;li&gt;电磁炉: 米家电磁炉青春版&lt;/li&gt;
+&lt;li&gt;煎锅, 雪平锅&lt;/li&gt;
+&lt;li&gt;厨房纸&lt;/li&gt;
+&lt;l
+      
+    
+    </summary>
+    
+    
+      <category term="GYM" scheme="http://taizilongxu.github.io/wiki/categories/GYM/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux namespace</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/container/namespace/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Linux/container/namespace/</id>
+    <published>2020-02-11T16:25:00.488Z</published>
+    <updated>2020-02-11T17:20:00.853Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="https://creaink.github.io/post/Computer/Linux/Linux-namespace.html" target="_blank" rel="noopener">https://creaink.github.io/post/Computer/Linux/Linux-namespace.html</a></li><li><a href="https://draveness.me/docker" target="_blank" rel="noopener">https://draveness.me/docker</a></li></ul><p>Linux namespace 是 Linux 提供的一种内核级别环境隔离方法</p><p>分类</p><table><thead><tr><th>namespace</th><th>隔离内容</th><th>flag</th><th>内核</th></tr></thead><tbody><tr><td>UTS</td><td>主机名</td><td>CLONE_NEWUTS</td><td>Linux 2.4.19</td></tr><tr><td>IPC</td><td>进程间通信</td><td>CLONE_NEWIPC</td><td>Linux 2.6.19</td></tr><tr><td>PID</td><td>chroot 进程树</td><td>CLONE_NEWPID</td><td>Linux 2.6.19</td></tr><tr><td>NS(Mount)</td><td>挂载点</td><td>CLONE_NEWNS</td><td>Linux 2.6.24</td></tr><tr><td>NET</td><td>网络访问, 包括接口</td><td>CLONE_NEWNET</td><td>Linux 2.6.29</td></tr><tr><td>USER</td><td>蒋虚拟的本地 UID 映射到真实的 UID</td><td>CLONE_NEWUSER</td><td>Linux 3.8</td></tr></tbody></table><p>三个系统调用</p><ul><li>clonne() 类似 fork, 实现线程的系统调用，用来创建一个新的进程，并可以通过设计上述参数达到隔离。</li><li>unshare() 使某进程脱离某个namespace</li><li>setns() 把某进程加入到某个namespace</li></ul><h2 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h2><p><code>/proc/[pid]/ns/</code> 目录下包含了某个进程的 namespace 所属，在 shell 中 <code>$$</code> 为当前进程 PID 所以可以：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls -l /proc/$$/ns</span></span><br><span class="line">total 0</span><br><span class="line">lrwxrwxrwx 1 root root 0 Jan  5 00:13 cgroup -&gt; cgroup:[4026531835]</span><br><span class="line">lrwxrwxrwx 1 root root 0 Jan  4 06:18 ipc -&gt; ipc:[4026531839]</span><br><span class="line">lrwxrwxrwx 1 root root 0 Jan  4 06:18 mnt -&gt; mnt:[4026531840]</span><br><span class="line">lrwxrwxrwx 1 root root 0 Jan  4 06:18 net -&gt; net:[4026531957]</span><br><span class="line">lrwxrwxrwx 1 root root 0 Jan  4 06:18 pid -&gt; pid:[4026531836]</span><br><span class="line">lrwxrwxrwx 1 root root 0 Jan  4 06:18 user -&gt; user:[4026531837]</span><br><span class="line">lrwxrwxrwx 1 root root 0 Jan  4 06:18 uts -&gt; uts:[4026531838]</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> readlink /proc/$$/ns/uts</span></span><br><span class="line">uts:[4026531838]</span><br><span class="line"><span class="meta">$</span><span class="bash"> readlink /proc/<span class="variable">$PPID</span>/ns/uts</span></span><br><span class="line">uts:[4026531838]</span><br></pre></td></tr></table></figure><p><code>/proc/[pid]/mounts</code> 目录展现了进程的挂载点，而 <code>/proc/[pid]/mountinfo</code> 里的内容更详细。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考资料:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://creaink.github.io/post/Computer/Linux/Linux-namespace.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://cr
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
+    
+      <category term="container" scheme="http://taizilongxu.github.io/wiki/categories/Linux/container/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>chroot</title>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/container/chroot/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Linux/container/chroot/</id>
+    <published>2020-02-11T16:18:37.641Z</published>
+    <updated>2020-02-11T17:28:04.630Z</updated>
+    
+    <content type="html"><![CDATA[<p>chroot  = change root directory 限制根目录, 防止越权</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/chroot-300x225.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;chroot  = change root directory 限制根目录, 防止越权&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/chroot-300x225.
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
+    
+      <category term="container" scheme="http://taizilongxu.github.io/wiki/categories/Linux/container/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>虚拟文件系统</title>
@@ -33,8 +141,8 @@
   
   <entry>
     <title>CFS 调度算法</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/cfs/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/cfs/</id>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/cfs/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Linux/cfs/</id>
     <published>2020-02-06T16:08:13.922Z</published>
     <updated>2020-02-06T17:24:48.559Z</updated>
     
@@ -51,6 +159,8 @@
     
     </summary>
     
+    
+      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
     
     
   </entry>
@@ -129,9 +239,9 @@
     <link href="http://taizilongxu.github.io/wiki/wiki/docker/"/>
     <id>http://taizilongxu.github.io/wiki/wiki/docker/</id>
     <published>2020-01-22T09:29:30.607Z</published>
-    <updated>2020-01-22T09:37:30.338Z</updated>
+    <updated>2020-02-11T17:29:20.682Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://medium.com/@nagarwal/understanding-the-docker-internals-7ccb052ce9fe" target="_blank" rel="noopener">https://medium.com/@nagarwal/understanding-the-docker-internals-7ccb052ce9fe</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://medium.com/@nagarwal/understanding-the-docker-internals-7ccb052ce9fe" target="_blank" rel="noopener">https://medium.com/@nagarwal/understanding-the-docker-internals-7ccb052ce9fe</a></p><p>Docker 底层三大技术 union filesystem, cgroup, namespace</p>]]></content>
     
     <summary type="html">
     
@@ -148,12 +258,12 @@
   
   <entry>
     <title>cgroup</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/cgroup/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/cgroup/</id>
+    <link href="http://taizilongxu.github.io/wiki/wiki/Linux/container/cgroup/"/>
+    <id>http://taizilongxu.github.io/wiki/wiki/Linux/container/cgroup/</id>
     <published>2020-01-22T07:00:22.615Z</published>
-    <updated>2020-02-09T16:25:57.837Z</updated>
+    <updated>2020-02-11T16:19:19.519Z</updated>
     
-    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="https://tech.meituan.com/2015/03/31/cgroups.html" target="_blank" rel="noopener">https://tech.meituan.com/2015/03/31/cgroups.html</a></li><li><a href="https://blog.csdn.net/zsj100213/article/details/89088446" target="_blank" rel="noopener">https://blog.csdn.net/zsj100213/article/details/89088446</a></li><li><a href="http://www.manongjc.com/article/7475.html" target="_blank" rel="noopener">http://www.manongjc.com/article/7475.html</a></li></ul><h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>cgroups(contol groups), google 工程师提出, 整合进 Linux 内核, 是 LXC 的基础</p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p> 限制单个进程或多个进程使用资源, 可以对  cpu, mem 实现精细化的控制</p><ul><li>资源限制</li><li>优先级分配</li><li>资源统计</li><li>任务控制</li></ul><h2 id="整体框架"><a href="#整体框架" class="headerlink" title="整体框架"></a>整体框架</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200209234834.png" alt=""></p><ul><li>Filesystem: 类似于 /proc</li><li>subsystem: 可配置资源, 例如 cpu, mem</li><li>task: 进程在 cgroup 里称为 task, taskid 为 pid</li><li>libcgroup: 开源软件, 方便配置</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206175136.png" alt=""></p><p>说明:</p><ul><li>第一层为 subsystem, 对应不通的物理资源</li><li>第二层为 cgroup 结构体, 描述对应子系统的资源占用</li><li>css_set(cgroup subststem set) 辅助数据结构, 描述所有资源限制</li><li>P 进程, 一个进程对应一个 css_set</li></ul><h2 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h2><p>查看挂载点</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mount | grep cgroup</span></span><br><span class="line">tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)  # tmpfs 内存临时文件呢</span><br><span class="line">cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)</span><br><span class="line">cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)</span><br><span class="line">cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)</span><br><span class="line">cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)</span><br><span class="line">cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)</span><br><span class="line">cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)</span><br><span class="line">cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)</span><br><span class="line">cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)</span><br></pre></td></tr></table></figure><p>查看子系统</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ll /sys/fs/cgroup</span></span><br><span class="line">total 0</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 blkio</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpu -&gt; cpu,cpuacct</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpuacct -&gt; cpu,cpuacct</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 cpu,cpuacct</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 cpuset</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 devices</span><br><span class="line">drwxr-xr-x 4 root root  0 Nov 17  2018 freezer</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 hugetlb</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 memory</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 net_cls</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 perf_event</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 systemd</span><br></pre></td></tr></table></figure><p>查看进程 cgroup</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /proc/135/cgroup</span></span><br><span class="line">10:memory:/</span><br><span class="line">9:cpuset:/</span><br><span class="line">8:hugetlb:/</span><br><span class="line">7:perf_event:/</span><br><span class="line">6:net_cls:/</span><br><span class="line">5:freezer:/</span><br><span class="line">4:blkio:/</span><br><span class="line">3:cpuacct,cpu:/</span><br><span class="line">2:devices:/</span><br><span class="line">1:name=systemd:/</span><br></pre></td></tr></table></figure><h2 id="内存限制"><a href="#内存限制" class="headerlink" title="内存限制"></a>内存限制</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /sys/fs/cgroup/memory/memory.oom_control</span></span><br><span class="line">oom_kill_disable 0</span><br><span class="line">under_oom 0</span><br></pre></td></tr></table></figure><p>oom_kill_disable == 1: 程序进入休眠状态</p><p>oom_kill_disable == 0: 操作系统杀死</p><p>配置项</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>memory.usage_in_bytes</td><td>当前内存中的使用量</td></tr><tr><td>memory.memsw.usage_in_bytes</td><td>当前内存和交换空间中的使用量</td></tr><tr><td>memory.limit_in_bytes</td><td>设置or查看内存使用量</td></tr><tr><td>memory.memsw.limit_in_bytes</td><td>设置or查看 内存加交换空间使用量</td></tr><tr><td>memory.failcnt</td><td>查看内存使用量被限制的次数</td></tr><tr><td>memory.memsw.failcnt</td><td>查看内存和交换空间使用量被限制的次数</td></tr><tr><td>memory.max_usage_in_bytes</td><td>查看内存最大使用量</td></tr><tr><td>memory.memsw.max_usage_in_bytes</td><td>查看最大内存和交换空间使用量</td></tr><tr><td>memory.soft_limit_in_bytes</td><td>设置or查看内存的soft limit</td></tr><tr><td>memory.stat</td><td>统计信息</td></tr><tr><td>memory.use_hierarchy</td><td>设置or查看层级统计的功能</td></tr><tr><td>memory.force_empty</td><td>触发强制page回收</td></tr><tr><td>memory.pressure_level</td><td>设置内存压力通知</td></tr><tr><td>memory.swappiness</td><td>设置or查看vmscan swappiness 参数</td></tr><tr><td>memory.move_charge_at_immigrate</td><td>设置or查看 controls of moving charges</td></tr><tr><td>memory.oom_control</td><td>设置or查看内存超限控制信息(OOM killer)</td></tr><tr><td>memory.numa_stat</td><td>每个numa节点的内存使用数量</td></tr></tbody></table><p>内核 mem 控制:</p><ul><li>memory.kmem.limit_in_bytes # 设置or查看 内核内存限制的硬限</li><li>memory.kmem.usage_in_bytes # 读取当前内核内存的分配</li><li>memory.kmem.failcnt # 读取当前内核内存分配受限的次数</li><li>memory.kmem.max_usage_in_bytes # 读取最大内核内存使用量</li><li>memory.kmem.tcp.limit_in_bytes # 设置tcp 缓存内存的hard limit</li><li>memory.kmem.tcp.usage_in_bytes # 读取tcp 缓存内存的使用量</li><li>memory.kmem.tcp.failcnt # tcp 缓存内存分配的受限次数</li><li>memory.kmem.tcp.max_usage_in_bytes # tcp 缓存内存的最大使用量</li></ul><h2 id="CPU-限制"><a href="#CPU-限制" class="headerlink" title="CPU 限制"></a>CPU 限制</h2><ol><li>cpuset 以核心的方式进行隔离</li><li>cpuquota 以 cpu 使用比率限制, 保证比率上限</li><li>cpusharess 以权重比率弹性分配, 保证最低占用时间比率</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[&#x2F;sys&#x2F;fs&#x2F;cgroup&#x2F;cpu]$ ll</span><br><span class="line">total 0</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.clone_children</span><br><span class="line">--w--w--w-   1 root root 0 Nov 17  2018 cgroup.event_control</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.procs</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cgroup.sane_behavior</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpuacct.usage</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.usage_percpu</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_quota_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_runtime_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.shares</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpu.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 notify_on_release</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 release_agent</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 tasks</span><br></pre></td></tr></table></figure><p>配置项</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>cpuset.cpus</td><td>可以使用的cpu节点</td></tr><tr><td>cpuset.mems:</td><td>可以使用的mem节点</td></tr><tr><td>cpuset.memory_migrate</td><td>内存节点改变是否要迁移</td></tr><tr><td>cpuset.cpu_exclusive</td><td>此cgroup里的任务是否独享cpu</td></tr><tr><td>cpuset.mem_exclusive</td><td>此cgroup里的任务是否独享mem节点</td></tr><tr><td>cpuset.mem_hardwall</td><td>限制内核内存分配的节点（mems是用户态的分配）</td></tr><tr><td>cpuset.memory_pressure</td><td>计算换页的压力</td></tr><tr><td>cpuset.memory_spread_page</td><td>将page cache分配到各个节点中，而不是当前内存节点</td></tr><tr><td>cpuset.memory_spread_slab</td><td>将slab对象(inode和dentry)分散到节点中</td></tr><tr><td>cpuset.sched_load_balance</td><td>打开cpu set中的cpu的负载均衡</td></tr><tr><td>cpuset.sched_relax_domain_level</td><td>the searching range when migrating tasks</td></tr><tr><td>cpuset.memory_pressure_enabled</td><td>是否需要计算 memory_pressure</td></tr></tbody></table><h2 id="cgroup-与-systemd-关系"><a href="#cgroup-与-systemd-关系" class="headerlink" title="cgroup 与 systemd 关系"></a>cgroup 与 systemd 关系</h2><p>其实没啥关系, 但是 systemd 兼容 cgroup, 可以在 cgroup 之上启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206232211.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p>参考资料:</p><ul><li><a href="https://tech.meituan.com/2015/03/31/cgroups.html" target="_blank" rel="noopener">https://tech.meituan.com/2015/03/31/cgroups.html</a></li><li><a href="https://blog.csdn.net/zsj100213/article/details/89088446" target="_blank" rel="noopener">https://blog.csdn.net/zsj100213/article/details/89088446</a></li><li><a href="http://www.manongjc.com/article/7475.html" target="_blank" rel="noopener">http://www.manongjc.com/article/7475.html</a></li><li><a href="https://zhuanlan.zhihu.com/p/81668069" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/81668069</a></li></ul><h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>cgroups(contol groups), google 工程师提出, 整合进 Linux 内核, 是 LXC 的基础</p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p> 限制单个进程或多个进程使用资源, 可以对  cpu, mem 实现精细化的控制</p><ul><li>资源限制</li><li>优先级分配</li><li>资源统计</li><li>任务控制</li></ul><h2 id="整体框架"><a href="#整体框架" class="headerlink" title="整体框架"></a>整体框架</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200209234834.png" alt=""></p><ul><li>Filesystem: 类似于 /proc</li><li>subsystem: 可配置资源, 例如 cpu, mem</li><li>task: 进程在 cgroup 里称为 task, taskid 为 pid</li><li>libcgroup: 开源软件, 方便配置</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206175136.png" alt=""></p><p>说明:</p><ul><li>第一层为 subsystem, 对应不通的物理资源</li><li>第二层为 cgroup 结构体, 描述对应子系统的资源占用</li><li>css_set(cgroup subststem set) 辅助数据结构, 描述所有资源限制</li><li>P 进程, 一个进程对应一个 css_set</li></ul><h2 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h2><p>查看挂载点</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mount | grep cgroup</span></span><br><span class="line">tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)  # tmpfs 内存临时文件呢</span><br><span class="line">cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)</span><br><span class="line">cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)</span><br><span class="line">cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)</span><br><span class="line">cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)</span><br><span class="line">cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)</span><br><span class="line">cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)</span><br><span class="line">cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)</span><br><span class="line">cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)</span><br></pre></td></tr></table></figure><p>查看子系统</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ll /sys/fs/cgroup</span></span><br><span class="line">total 0</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 blkio</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpu -&gt; cpu,cpuacct</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpuacct -&gt; cpu,cpuacct</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 cpu,cpuacct</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 cpuset</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 devices</span><br><span class="line">drwxr-xr-x 4 root root  0 Nov 17  2018 freezer</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 hugetlb</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 memory</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 net_cls</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 perf_event</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 systemd</span><br></pre></td></tr></table></figure><p>查看进程 cgroup</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /proc/135/cgroup</span></span><br><span class="line">10:memory:/</span><br><span class="line">9:cpuset:/</span><br><span class="line">8:hugetlb:/</span><br><span class="line">7:perf_event:/</span><br><span class="line">6:net_cls:/</span><br><span class="line">5:freezer:/</span><br><span class="line">4:blkio:/</span><br><span class="line">3:cpuacct,cpu:/</span><br><span class="line">2:devices:/</span><br><span class="line">1:name=systemd:/</span><br></pre></td></tr></table></figure><h2 id="内存限制"><a href="#内存限制" class="headerlink" title="内存限制"></a>内存限制</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /sys/fs/cgroup/memory/memory.oom_control</span></span><br><span class="line">oom_kill_disable 0</span><br><span class="line">under_oom 0</span><br></pre></td></tr></table></figure><p>oom_kill_disable == 1: 程序进入休眠状态</p><p>oom_kill_disable == 0: 操作系统杀死</p><p>配置项</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>memory.usage_in_bytes</td><td>当前内存中的使用量</td></tr><tr><td>memory.memsw.usage_in_bytes</td><td>当前内存和交换空间中的使用量</td></tr><tr><td>memory.limit_in_bytes</td><td>设置or查看内存使用量</td></tr><tr><td>memory.memsw.limit_in_bytes</td><td>设置or查看 内存加交换空间使用量</td></tr><tr><td>memory.failcnt</td><td>查看内存使用量被限制的次数</td></tr><tr><td>memory.memsw.failcnt</td><td>查看内存和交换空间使用量被限制的次数</td></tr><tr><td>memory.max_usage_in_bytes</td><td>查看内存最大使用量</td></tr><tr><td>memory.memsw.max_usage_in_bytes</td><td>查看最大内存和交换空间使用量</td></tr><tr><td>memory.soft_limit_in_bytes</td><td>设置or查看内存的soft limit</td></tr><tr><td>memory.stat</td><td>统计信息</td></tr><tr><td>memory.use_hierarchy</td><td>设置or查看层级统计的功能</td></tr><tr><td>memory.force_empty</td><td>触发强制page回收</td></tr><tr><td>memory.pressure_level</td><td>设置内存压力通知</td></tr><tr><td>memory.swappiness</td><td>设置or查看vmscan swappiness 参数</td></tr><tr><td>memory.move_charge_at_immigrate</td><td>设置or查看 controls of moving charges</td></tr><tr><td>memory.oom_control</td><td>设置or查看内存超限控制信息(OOM killer)</td></tr><tr><td>memory.numa_stat</td><td>每个numa节点的内存使用数量</td></tr></tbody></table><p>内核 mem 控制:</p><ul><li>memory.kmem.limit_in_bytes # 设置or查看 内核内存限制的硬限</li><li>memory.kmem.usage_in_bytes # 读取当前内核内存的分配</li><li>memory.kmem.failcnt # 读取当前内核内存分配受限的次数</li><li>memory.kmem.max_usage_in_bytes # 读取最大内核内存使用量</li><li>memory.kmem.tcp.limit_in_bytes # 设置tcp 缓存内存的hard limit</li><li>memory.kmem.tcp.usage_in_bytes # 读取tcp 缓存内存的使用量</li><li>memory.kmem.tcp.failcnt # tcp 缓存内存分配的受限次数</li><li>memory.kmem.tcp.max_usage_in_bytes # tcp 缓存内存的最大使用量</li></ul><h2 id="CPU-限制"><a href="#CPU-限制" class="headerlink" title="CPU 限制"></a>CPU 限制</h2><ol><li>cpuset 以核心的方式进行隔离</li><li>cpuquota 以 cpu 使用比率限制, 保证比率上限</li><li>cpusharess 以权重比率弹性分配, 保证最低占用时间比率</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[&#x2F;sys&#x2F;fs&#x2F;cgroup&#x2F;cpu]$ ll</span><br><span class="line">total 0</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.clone_children</span><br><span class="line">--w--w--w-   1 root root 0 Nov 17  2018 cgroup.event_control</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.procs</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cgroup.sane_behavior</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpuacct.usage</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.usage_percpu</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_quota_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_runtime_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.shares</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpu.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 notify_on_release</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 release_agent</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 tasks</span><br></pre></td></tr></table></figure><p>配置项</p><p>cpu: 统限制对CPU的访问，每个参数独立存在于cgroups虚拟文件系统的伪文件中</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>cpu.shares</td><td>cgroup对时间的分配, 针对所有核。比如cgroup A设置的是1，cgroup B设置的是2，那么B中的任务获取cpu的时间，是A中任务的2倍</td></tr><tr><td>cpu.cfs_period_us</td><td>完全公平调度器的调整时间配额的周期,  取值范围 1ms - 1s</td></tr><tr><td>cpu.cfs_quota_us</td><td>完全公平调度器的周期当中可以占用的时间, 取值范围 &gt; 1ms, 如为 -1 即为无限制</td></tr><tr><td>cpu.stat</td><td></td></tr><tr><td>cpu.stat.nr_periods</td><td>进入周期的次数</td></tr><tr><td>cpu.stat.nr_throttled</td><td>运行时间被调整的次数</td></tr><tr><td>cpu.stat.throttled_time</td><td>用于调整的时间</td></tr></tbody></table><p>cpuacct: 生成cgroup任务所使用的CPU资源报告，不做资源限制功能</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>cpuacct.usage</td><td>该cgroup中所有任务总共使用的CPU时间（ns纳秒）</td></tr><tr><td>cpuacct.stat</td><td>该cgroup中所有任务总共使用的CPU时间，区分user和system时间</td></tr><tr><td>cpuacct.usage_percpu</td><td>该cgroup中所有任务使用各个CPU核数的时间</td></tr></tbody></table><p>cpuset: 适用于分配独立的CPU节点和Mem节点，比如将进程绑定在指定的CPU或者内存节点上运行</p><table><thead><tr><th>名称</th><th>作用</th></tr></thead><tbody><tr><td>cpuset.cpus</td><td>可以使用的cpu节点</td></tr><tr><td>cpuset.mems</td><td>可以使用的mem节点</td></tr><tr><td>cpuset.memory_migrate</td><td>内存节点改变是否要迁移</td></tr><tr><td>cpuset.cpu_exclusive</td><td>此cgroup里的任务是否独享cpu</td></tr><tr><td>cpuset.mem_exclusive</td><td>此cgroup里的任务是否独享mem节点</td></tr><tr><td>cpuset.mem_hardwall</td><td>限制内核内存分配的节点（mems是用户态的分配）</td></tr><tr><td>cpuset.memory_pressure</td><td>计算换页的压力</td></tr><tr><td>cpuset.memory_spread_page</td><td>将page cache分配到各个节点中，而不是当前内存节点</td></tr><tr><td>cpuset.memory_spread_slab</td><td>将slab对象(inode和dentry)分散到节点中</td></tr><tr><td>cpuset.sched_load_balance</td><td>打开cpu set中的cpu的负载均衡</td></tr><tr><td>cpuset.sched_relax_domain_level</td><td>the searching range when migrating tasks</td></tr><tr><td>cpuset.memory_pressure_enable0d</td><td>是否需要计算 memory_pressure</td></tr></tbody></table><h2 id="cgroup-与-systemd-关系"><a href="#cgroup-与-systemd-关系" class="headerlink" title="cgroup 与 systemd 关系"></a>cgroup 与 systemd 关系</h2><p>其实没啥关系, 但是 systemd 兼容 cgroup, 可以在 cgroup 之上启动</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206232211.png" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -166,6 +276,10 @@
     
     </summary>
     
+    
+      <category term="Linux" scheme="http://taizilongxu.github.io/wiki/categories/Linux/"/>
+    
+      <category term="container" scheme="http://taizilongxu.github.io/wiki/categories/Linux/container/"/>
     
     
   </entry>
@@ -367,127 +481,6 @@
       <category term="Language" scheme="http://taizilongxu.github.io/wiki/categories/Language/"/>
     
       <category term="Java" scheme="http://taizilongxu.github.io/wiki/categories/Language/Java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JVM 简介 (翻译)</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Language/Java/jvm/jvm/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Language/Java/jvm/jvm/</id>
-    <published>2020-01-15T12:06:59.168Z</published>
-    <updated>2020-01-15T12:06:59.168Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.guru99.com/java-virtual-machine-jvm.html" target="_blank" rel="noopener">https://www.guru99.com/java-virtual-machine-jvm.html</a></p><h2 id="什么是-JVM"><a href="#什么是-JVM" class="headerlink" title="什么是 JVM ?"></a>什么是 JVM ?</h2><p>Java Virtual Machine (JVM) 是提供 Java 代码和应用运行环境的引擎. 它可以将 Java 字节码转换成机器码. JVM 是 Java Run Environment (JRE) 的一部分. 在其他语言里, 编译器为特定的系统产生机器码, 然而, Java 编译器产生的代码直接提供给虚拟机, 就是我们熟知的 JVM</p><h3 id="JVM-如何工作"><a href="#JVM-如何工作" class="headerlink" title="JVM 如何工作"></a>JVM 如何工作</h3><p>首先, Java 代码编译成字节码. 这个字节码可以在不同的机器上解析.</p><p>字节码是介于主机系统和 Java 源码之间的中间语言.</p><p>JVM 负责分配内存空间</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_work.png" alt=""></p><h2 id="JVM-架构"><a href="#JVM-架构" class="headerlink" title="JVM 架构"></a>JVM 架构</h2><p>让我们来了解下 JVM 的架构. 它包含了 classloader, memory area, execution egine 等.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_arch.png" alt=""></p><ol><li>ClassLoader: 类加载器是一个加载类文件的子系统, 包括 3 个主要功能, Loading, Linking 和 Initialization</li><li>Method Area: JVM 方法区保存像 metadata, 持久的运行池和代码方法</li><li>Heap: 所有的 Object, 他们相关的 instance 变量, 数组都存在 heap 里, 这些内存可以在不同线程间分享</li><li>JVM Language Stacks: 存储 local 变量, 和一部分结果. <strong><em>每个线程都有自己的 JVM stack</em></strong>, 创建线程的同时它们也会被创建. 当一个方法被 invoke 时, 新的 frame 就会被创建, 当方法 invocation process 完成时也就会被删除.</li><li>PC Registers: 保存正在执行的代码地址. 在 Java 中, <strong><em>每个线程有自己的 PC register</em></strong>.</li><li>Native Method Stacks: 保存原生库的地方. 通常都是其他语言的代码.</li><li>Execution Engine: It is a type of software used to test hardware, software, or complete systems. The test execution engine never carries any information about the tested product.</li><li>Native Method interface: 编程框架. 允许 Java 代码在 JVM 里调用库和原生应用.</li><li>Native Method Libraries: Execution Engine 需要的一些原生库(C, C++)</li></ol><h2 id="代码编译和执行过程"><a href="#代码编译和执行过程" class="headerlink" title="代码编译和执行过程"></a>代码编译和执行过程</h2><p>为了书写和执行一个软件, 你需要:</p><ol><li>Editor: 输入你的代码</li><li>Compile: 讲你的高级语言转换成机器语言</li><li>Linker: 将不同的程序文件合并在你的 main 程序里.</li><li>Loader: 讲文件从硬盘里加载到 RAM 里. Loading 的过程是在执行代码的时候自动执行的</li><li>Execution: 通过操作系统和进程来执行你的代码</li></ol><h2 id="C-代码编译和执行过程"><a href="#C-代码编译和执行过程" class="headerlink" title="C 代码编译和执行过程"></a>C 代码编译和执行过程</h2><p>为了理解 Java 编译过程, 先让我们简单看一下 C 语言是如何编译和链接的</p><p>假设你的 main 函数里调用了 f1 和 f2 两个函数. main 函数保存在 a1.c 文件里</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_c_1.png" alt=""></p><p>f1 函数保存在 a2.c 文件里</p><p>f2 函数保存在 a3.c 文件里</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_c_3.png" alt=""></p><p>所有文件, a1.c, a2.c 和 a3.c 通过 compiler 输出为机器码</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_c_4.png" alt=""></p><p>下一步就是通过 linker 将所有这些 object 文件打包成一个 exe 文件</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_c_5.png" alt=""></p><p>在程序运行期间, 一个 loader 程序将会把 a.exe load 进 Ram 里来执行</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_c_6.png" alt=""></p><h2 id="Java-代码在-JVM-里编译和执行"><a href="#Java-代码在-JVM-里编译和执行" class="headerlink" title="Java 代码在 JVM 里编译和执行"></a>Java 代码在 JVM 里编译和执行</h2><p>让我们看看 Java 程序. 在你的 main 函数里有 f1 , f2 两个函数</p><ul><li>main 方法存在 a1.java 文件</li><li>f1 存在 a2.java 文件</li><li>f2 存在 a3.java 文件</li></ul><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_java_1.png" alt=""></p><p>compiller 将会产出 3 个以 .class 命名的字节码文件. 不像 C, 没有 linking 的过程.</p><p>JVM 存在于 RAM 中. 在执行期间, 使用 class loader 把 class 文件装载进 RAM, </p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_java_2.png" alt=""></p><p>下一步,  execution engine 将会把字节码转换为机器码,这是在 compile 时候进行的. 这就是为什么相对来说 Java 运行的比较慢.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/jvm_java_3.png" alt=""></p><p>NOTE: JIT 或者说 Just-in-time compiler 是 JVM 的一部分. It interprets part of the Byte Code that has similar functionality at the same time.</p><h2 id="为什么-Java-既是解析又是编译语言"><a href="#为什么-Java-既是解析又是编译语言" class="headerlink" title="为什么 Java 既是解析又是编译语言?"></a>为什么 Java 既是解析又是编译语言?</h2><p>程序语言分类</p><ul><li>高级语言: C++, Java</li><li>中等语言: C</li><li>低级语言: Assembly</li><li>最低级语言: 机器语言</li></ul><p>compiler 可以将一个程序从一级语言转化为另一级语言, 例如将 C++ 转为机器语言</p><p>java compiler 将高级的 java 代码转换为字节码(也是一种机器码)</p><p>interpreter 可以将同一级别的语言转化为相同级别的语言.例如 Java 程序转换为 C++</p><p>在 Java 中 JIT 将字节码转换为机器码是相同语言级别的转换</p><p>所以, Java 既是解析又是编译语言</p><h2 id="为什么-Java-慢"><a href="#为什么-Java-慢" class="headerlink" title="为什么 Java 慢?"></a>为什么 Java 慢?</h2><p>主要两个原因:</p><ol><li>动态链接: 不像 C, Java 在运行时链接</li><li>运行时解析: 字节码是在运行时转换为机器码. 所以速度有所减慢</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://www.guru99.com/java-virtual-machine-jvm.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.guru99.com/java-virtual-machine
-      
-    
-    </summary>
-    
-    
-      <category term="Language" scheme="http://taizilongxu.github.io/wiki/categories/Language/"/>
-    
-      <category term="Java" scheme="http://taizilongxu.github.io/wiki/categories/Language/Java/"/>
-    
-      <category term="jvm" scheme="http://taizilongxu.github.io/wiki/categories/Language/Java/jvm/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>RAID</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</id>
-    <published>2020-01-15T12:06:59.165Z</published>
-    <updated>2020-01-15T12:06:59.165Z</updated>
-    
-    <content type="html"><![CDATA[<p>RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid_table.png" alt=""></p><h2 id="RAID-0"><a href="#RAID-0" class="headerlink" title="RAID 0"></a>RAID 0</h2><p>分散打在不同磁盘上, 写入速度 * n</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid0.png" alt=""></p><h2 id="RAID-1"><a href="#RAID-1" class="headerlink" title="RAID 1"></a>RAID 1</h2><p>镜像对考， 双写</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid1.png" alt=""></p><h2 id="RAID-5"><a href="#RAID-5" class="headerlink" title="RAID 5"></a>RAID 5</h2><p>校验块分布在不同磁盘上, 易于扩展</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid5.png" alt=""></p><h2 id="Raid-6"><a href="#Raid-6" class="headerlink" title="Raid 6"></a>Raid 6</h2><p>采用两种独立的校验算法</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid6.png" alt=""></p><h2 id="RAID-组合"><a href="#RAID-组合" class="headerlink" title="RAID 组合"></a>RAID 组合</h2><p>组合方式, 速度既快, 又有备份</p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid01.png" alt=""></p><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/raid10.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;RAID是英文Redundant Array of Independent Disks的缩写, 即磁盘冗余阵列.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/taizilongxu/img/master/img/ra
-      
-    
-    </summary>
-    
-    
-      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
-    
-      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>硬盘接口</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/</id>
-    <published>2020-01-15T12:06:59.165Z</published>
-    <updated>2020-01-15T12:06:59.165Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th align="center">名称</th><th align="center">总线</th><th align="center">物理接口</th><th>协议</th><th>年份</th><th>带宽</th><th>理论速度</th><th>编码</th></tr></thead><tbody><tr><td align="center">SATA 1.0</td><td align="center">SATA</td><td align="center">SATA</td><td>AHCI</td><td>2003</td><td>1.5 Gb/s</td><td>150 MB/s</td><td>8 b / 10 b</td></tr><tr><td align="center">SATA 2.0</td><td align="center">SATA</td><td align="center">SATA</td><td>AHCI</td><td>2004</td><td>3 Gb/s</td><td>300 MB/s</td><td>8 b / 10 b</td></tr><tr><td align="center">SATA 3.0</td><td align="center">SATA</td><td align="center">SATA</td><td>AHCI</td><td>2009</td><td>6 Gb/s</td><td>600 MB/s</td><td>8 b / 10 b</td></tr><tr><td align="center">SATA Express(SATA 3.2)</td><td align="center">SATA</td><td align="center">SATA</td><td></td><td>2014</td><td>16 Gb/s</td><td>1969 MB/s</td><td>128 b / 130 b</td></tr><tr><td align="center">M.2 SATA</td><td align="center">SATA</td><td align="center">M.2</td><td>AHCI</td><td>2013</td><td>6 Gb/s</td><td>600 MB/s</td><td></td></tr><tr><td align="center">M.2 NVMe</td><td align="center">NVMe</td><td align="center">M.2</td><td>PCIe</td><td>2013</td><td>32 Gb/s</td><td>3200 MB/s</td><td></td></tr></tbody></table><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/interface.png" alt=""></p><p>上面这个图有点问题, Technology 那一行的 SATA 都改为 AHCI</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;center&quot;&gt;名称&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;总线&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;物理接口&lt;/th&gt;
-&lt;th&gt;协议&lt;/th&gt;
-&lt;th&gt;年份&lt;/th&gt;
-&lt;th&gt;带宽&lt;/th&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
-    
-      <category term="Disk" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/Disk/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Wi-Fi 协议</title>
-    <link href="http://taizilongxu.github.io/wiki/wiki/Hardware/wifi/"/>
-    <id>http://taizilongxu.github.io/wiki/wiki/Hardware/wifi/</id>
-    <published>2020-01-15T12:06:59.164Z</published>
-    <updated>2020-01-15T12:06:59.164Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th align="center">名称</th><th align="center">代号</th><th align="center">年代</th><th align="center">频段</th><th align="center">带宽</th></tr></thead><tbody><tr><td align="center">802.11b</td><td align="center">Wi-Fi 1</td><td align="center">1999</td><td align="center">2.4 GHz</td><td align="center">11 Mbps</td></tr><tr><td align="center">802.11a</td><td align="center">Wi-Fi 2</td><td align="center">1999</td><td align="center">5 GHz</td><td align="center">54 Mbps</td></tr><tr><td align="center">802.11g</td><td align="center">Wi-Fi 3</td><td align="center">2003</td><td align="center">2.4 GHz</td><td align="center">54 Mbps</td></tr><tr><td align="center">802.11n</td><td align="center">Wi-Fi 4</td><td align="center">2009</td><td align="center">2.4 GHz / 5 GHz</td><td align="center">450 Mbps</td></tr><tr><td align="center">802.11ac</td><td align="center">Wi-Fi 5</td><td align="center">2014</td><td align="center">2.4 GHz / 5 GHz</td><td align="center">866.7 Mbps</td></tr><tr><td align="center">802.11ax</td><td align="center">Wi-Fi 6</td><td align="center">2019</td><td align="center">2.4 GHz / 5 GHz</td><td align="center">1201 Mbps</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;center&quot;&gt;名称&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;代号&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;年代&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;频段&lt;/th&gt;
-&lt;th align=&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="Hardware" scheme="http://taizilongxu.github.io/wiki/categories/Hardware/"/>
     
     
   </entry>

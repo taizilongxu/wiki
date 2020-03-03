@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>cgroup | Limbo&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="cgroup" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="参考资料:  https:&#x2F;&#x2F;tech.meituan.com&#x2F;2015&#x2F;03&#x2F;31&#x2F;cgroups.html https:&#x2F;&#x2F;blog.csdn.net&#x2F;zsj100213&#x2F;article&#x2F;details&#x2F;89088446 http:&#x2F;&#x2F;www.manongjc.com&#x2F;article&#x2F;7475.html https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;81668069  由来cgro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cgroup">
+<meta property="og:url" content="http://taizilongxu.github.io/wiki/wiki/Linux/container/cgroup/index.html">
+<meta property="og:site_name" content="Limbo&#39;s Wiki">
+<meta property="og:description" content="参考资料:  https:&#x2F;&#x2F;tech.meituan.com&#x2F;2015&#x2F;03&#x2F;31&#x2F;cgroups.html https:&#x2F;&#x2F;blog.csdn.net&#x2F;zsj100213&#x2F;article&#x2F;details&#x2F;89088446 http:&#x2F;&#x2F;www.manongjc.com&#x2F;article&#x2F;7475.html https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;81668069  由来cgro">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200209234834.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206175136.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206232211.png">
+<meta property="article:published_time" content="2020-01-22T07:00:22.615Z">
+<meta property="article:modified_time" content="2020-02-11T16:19:19.519Z">
+<meta property="article:author" content="Limbo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200209234834.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Limbo&#39;s Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/wiki/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/wiki/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/wiki/css/style.css">
+
+    
+<script src="/wiki/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/wiki/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+        <meta name="google-site-verification" content="G-4X9REZXK33# enter Google site verification code" />
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/wiki/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Limbo&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/wiki/">首页</a>
+                
+                    <a class="main-nav-link" href="/wiki/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/wiki/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/wiki/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/wiki/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wiki/',
+        CONTENT_URL: '/wiki/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wiki/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/wiki/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            BigData
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Kafka
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/BigData/Kafka/cheat_sheet/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/BigData/flink/">Flink 如何工作的?</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Blog
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Blog/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            GYM
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/GYM/gym/">食材</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hack
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hack/switch/">switch 破解原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hackintosh
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hackintosh/principel/">黑苹果原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hardware
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Disk
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hardware/Disk/raid/">RAID</a></li>  <li class="file"><a href="/wiki/wiki/Hardware/Disk/interface/">硬盘接口</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Hardware/wifi/">Wi-Fi 协议</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Language
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Java
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            jvm
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm/">JVM 简介 (翻译)</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm_mem/">JVM Memory</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Language/Java/shaded/">使用 maven shade plugin 解决重复类问题</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/maven/">Maven 汇总</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/class_bytes/">Class 文件结构</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Linux
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            container
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/wiki/wiki/Linux/container/cgroup/">cgroup</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/chroot/">chroot</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/namespace/">Linux namespace</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  <li class="file"><a href="/wiki/wiki/Linux/boot/">Linux boot</a></li>  <li class="file"><a href="/wiki/wiki/Linux/cfs/">CFS 调度算法</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Tools
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Tools/git/">Git 原理</a></li>  <li class="file"><a href="/wiki/wiki/Tools/ssh/">Ssh</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/docker/">docker internal</a></li>  <li class="file"><a href="/wiki/wiki/compiler/">编译原理</a></li>  <li class="file"><a href="/wiki/wiki/ansible/"></a></li>  <li class="file"><a href="/wiki/wiki/saltstack/"></a></li>  <li class="file"><a href="/wiki/wiki/vfs/">虚拟文件系统</a></li>  <li class="file"><a href="/wiki/wiki/download/">下载原理</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Linux/container/cgroup" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/wiki/categories/Linux/">Linux</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/wiki/categories/Linux/container/">container</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/wiki/Linux/container/cgroup/">
+            <time datetime="2020-01-22T07:00:22.615Z" itemprop="datePublished">2020-01-22</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/Wiki-site/raw/master/source/_posts/Linux/container/cgroup.md' target="_blank" rel="noopener"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/Wiki-site/edit/master/source/_posts/Linux/container/cgroup.md' target="_blank" rel="noopener"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/Wiki-site/commits/master/source/_posts/Linux/container/cgroup.md' target="_blank" rel="noopener"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            cgroup
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#由来"><span class="toc-number">1.</span> <span class="toc-text">由来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-number">2.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整体框架"><span class="toc-number">3.</span> <span class="toc-text">整体框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实操"><span class="toc-number">4.</span> <span class="toc-text">实操</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存限制"><span class="toc-number">5.</span> <span class="toc-text">内存限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU-限制"><span class="toc-number">6.</span> <span class="toc-text">CPU 限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cgroup-与-systemd-关系"><span class="toc-number">7.</span> <span class="toc-text">cgroup 与 systemd 关系</span></a></li></ol>
+                </div>
+            
+        
+        
+            <p>参考资料:</p>
+<ul>
+<li><a href="https://tech.meituan.com/2015/03/31/cgroups.html" target="_blank" rel="noopener">https://tech.meituan.com/2015/03/31/cgroups.html</a></li>
+<li><a href="https://blog.csdn.net/zsj100213/article/details/89088446" target="_blank" rel="noopener">https://blog.csdn.net/zsj100213/article/details/89088446</a></li>
+<li><a href="http://www.manongjc.com/article/7475.html" target="_blank" rel="noopener">http://www.manongjc.com/article/7475.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/81668069" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/81668069</a></li>
+</ul>
+<h2 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h2><p>cgroups(contol groups), google 工程师提出, 整合进 Linux 内核, 是 LXC 的基础</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p> 限制单个进程或多个进程使用资源, 可以对  cpu, mem 实现精细化的控制</p>
+<ul>
+<li>资源限制</li>
+<li>优先级分配</li>
+<li>资源统计</li>
+<li>任务控制</li>
+</ul>
+<h2 id="整体框架"><a href="#整体框架" class="headerlink" title="整体框架"></a>整体框架</h2><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200209234834.png" alt=""></p>
+<ul>
+<li>Filesystem: 类似于 /proc</li>
+<li>subsystem: 可配置资源, 例如 cpu, mem</li>
+<li>task: 进程在 cgroup 里称为 task, taskid 为 pid</li>
+<li>libcgroup: 开源软件, 方便配置</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206175136.png" alt=""></p>
+<p>说明:</p>
+<ul>
+<li>第一层为 subsystem, 对应不通的物理资源</li>
+<li>第二层为 cgroup 结构体, 描述对应子系统的资源占用</li>
+<li>css_set(cgroup subststem set) 辅助数据结构, 描述所有资源限制</li>
+<li>P 进程, 一个进程对应一个 css_set</li>
+</ul>
+<h2 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h2><p>查看挂载点</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mount | grep cgroup</span></span><br><span class="line">tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)  # tmpfs 内存临时文件呢</span><br><span class="line">cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)</span><br><span class="line">cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)</span><br><span class="line">cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)</span><br><span class="line">cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)</span><br><span class="line">cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)</span><br><span class="line">cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)</span><br><span class="line">cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)</span><br><span class="line">cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)</span><br><span class="line">cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)</span><br></pre></td></tr></table></figure>
+
+<p>查看子系统</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ll /sys/fs/cgroup</span></span><br><span class="line">total 0</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 blkio</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpu -&gt; cpu,cpuacct</span><br><span class="line">lrwxrwxrwx 1 root root 11 Nov 17  2018 cpuacct -&gt; cpu,cpuacct</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 cpu,cpuacct</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 cpuset</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 devices</span><br><span class="line">drwxr-xr-x 4 root root  0 Nov 17  2018 freezer</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 hugetlb</span><br><span class="line">drwxr-xr-x 8 root root  0 Nov 17  2018 memory</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 net_cls</span><br><span class="line">drwxr-xr-x 3 root root  0 Nov 17  2018 perf_event</span><br><span class="line">drwxr-xr-x 5 root root  0 Nov 17  2018 systemd</span><br></pre></td></tr></table></figure>
+
+<p>查看进程 cgroup</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /proc/135/cgroup</span></span><br><span class="line">10:memory:/</span><br><span class="line">9:cpuset:/</span><br><span class="line">8:hugetlb:/</span><br><span class="line">7:perf_event:/</span><br><span class="line">6:net_cls:/</span><br><span class="line">5:freezer:/</span><br><span class="line">4:blkio:/</span><br><span class="line">3:cpuacct,cpu:/</span><br><span class="line">2:devices:/</span><br><span class="line">1:name=systemd:/</span><br></pre></td></tr></table></figure>
+
+<h2 id="内存限制"><a href="#内存限制" class="headerlink" title="内存限制"></a>内存限制</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat /sys/fs/cgroup/memory/memory.oom_control</span></span><br><span class="line">oom_kill_disable 0</span><br><span class="line">under_oom 0</span><br></pre></td></tr></table></figure>
+
+<p>oom_kill_disable == 1: 程序进入休眠状态</p>
+<p>oom_kill_disable == 0: 操作系统杀死</p>
+<p>配置项</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>memory.usage_in_bytes</td>
+<td>当前内存中的使用量</td>
+</tr>
+<tr>
+<td>memory.memsw.usage_in_bytes</td>
+<td>当前内存和交换空间中的使用量</td>
+</tr>
+<tr>
+<td>memory.limit_in_bytes</td>
+<td>设置or查看内存使用量</td>
+</tr>
+<tr>
+<td>memory.memsw.limit_in_bytes</td>
+<td>设置or查看 内存加交换空间使用量</td>
+</tr>
+<tr>
+<td>memory.failcnt</td>
+<td>查看内存使用量被限制的次数</td>
+</tr>
+<tr>
+<td>memory.memsw.failcnt</td>
+<td>查看内存和交换空间使用量被限制的次数</td>
+</tr>
+<tr>
+<td>memory.max_usage_in_bytes</td>
+<td>查看内存最大使用量</td>
+</tr>
+<tr>
+<td>memory.memsw.max_usage_in_bytes</td>
+<td>查看最大内存和交换空间使用量</td>
+</tr>
+<tr>
+<td>memory.soft_limit_in_bytes</td>
+<td>设置or查看内存的soft limit</td>
+</tr>
+<tr>
+<td>memory.stat</td>
+<td>统计信息</td>
+</tr>
+<tr>
+<td>memory.use_hierarchy</td>
+<td>设置or查看层级统计的功能</td>
+</tr>
+<tr>
+<td>memory.force_empty</td>
+<td>触发强制page回收</td>
+</tr>
+<tr>
+<td>memory.pressure_level</td>
+<td>设置内存压力通知</td>
+</tr>
+<tr>
+<td>memory.swappiness</td>
+<td>设置or查看vmscan swappiness 参数</td>
+</tr>
+<tr>
+<td>memory.move_charge_at_immigrate</td>
+<td>设置or查看 controls of moving charges</td>
+</tr>
+<tr>
+<td>memory.oom_control</td>
+<td>设置or查看内存超限控制信息(OOM killer)</td>
+</tr>
+<tr>
+<td>memory.numa_stat</td>
+<td>每个numa节点的内存使用数量</td>
+</tr>
+</tbody></table>
+<p>内核 mem 控制:</p>
+<ul>
+<li>memory.kmem.limit_in_bytes # 设置or查看 内核内存限制的硬限</li>
+<li>memory.kmem.usage_in_bytes # 读取当前内核内存的分配</li>
+<li>memory.kmem.failcnt # 读取当前内核内存分配受限的次数</li>
+<li>memory.kmem.max_usage_in_bytes # 读取最大内核内存使用量</li>
+<li>memory.kmem.tcp.limit_in_bytes # 设置tcp 缓存内存的hard limit</li>
+<li>memory.kmem.tcp.usage_in_bytes # 读取tcp 缓存内存的使用量</li>
+<li>memory.kmem.tcp.failcnt # tcp 缓存内存分配的受限次数</li>
+<li>memory.kmem.tcp.max_usage_in_bytes # tcp 缓存内存的最大使用量</li>
+</ul>
+<h2 id="CPU-限制"><a href="#CPU-限制" class="headerlink" title="CPU 限制"></a>CPU 限制</h2><ol>
+<li>cpuset 以核心的方式进行隔离</li>
+<li>cpuquota 以 cpu 使用比率限制, 保证比率上限</li>
+<li>cpusharess 以权重比率弹性分配, 保证最低占用时间比率</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[&#x2F;sys&#x2F;fs&#x2F;cgroup&#x2F;cpu]$ ll</span><br><span class="line">total 0</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.clone_children</span><br><span class="line">--w--w--w-   1 root root 0 Nov 17  2018 cgroup.event_control</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cgroup.procs</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cgroup.sane_behavior</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpuacct.usage</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpuacct.usage_percpu</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.cfs_quota_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_period_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.rt_runtime_us</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 cpu.shares</span><br><span class="line">-r--r--r--   1 root root 0 Nov 17  2018 cpu.stat</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 notify_on_release</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 release_agent</span><br><span class="line">-rw-r--r--   1 root root 0 Nov 17  2018 tasks</span><br></pre></td></tr></table></figure>
+
+<p>配置项</p>
+<p>cpu: 统限制对CPU的访问，每个参数独立存在于cgroups虚拟文件系统的伪文件中</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cpu.shares</td>
+<td>cgroup对时间的分配, 针对所有核。比如cgroup A设置的是1，cgroup B设置的是2，那么B中的任务获取cpu的时间，是A中任务的2倍</td>
+</tr>
+<tr>
+<td>cpu.cfs_period_us</td>
+<td>完全公平调度器的调整时间配额的周期,  取值范围 1ms - 1s</td>
+</tr>
+<tr>
+<td>cpu.cfs_quota_us</td>
+<td>完全公平调度器的周期当中可以占用的时间, 取值范围 &gt; 1ms, 如为 -1 即为无限制</td>
+</tr>
+<tr>
+<td>cpu.stat</td>
+<td></td>
+</tr>
+<tr>
+<td>cpu.stat.nr_periods</td>
+<td>进入周期的次数</td>
+</tr>
+<tr>
+<td>cpu.stat.nr_throttled</td>
+<td>运行时间被调整的次数</td>
+</tr>
+<tr>
+<td>cpu.stat.throttled_time</td>
+<td>用于调整的时间</td>
+</tr>
+</tbody></table>
+<p>cpuacct: 生成cgroup任务所使用的CPU资源报告，不做资源限制功能</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cpuacct.usage</td>
+<td>该cgroup中所有任务总共使用的CPU时间（ns纳秒）</td>
+</tr>
+<tr>
+<td>cpuacct.stat</td>
+<td>该cgroup中所有任务总共使用的CPU时间，区分user和system时间</td>
+</tr>
+<tr>
+<td>cpuacct.usage_percpu</td>
+<td>该cgroup中所有任务使用各个CPU核数的时间</td>
+</tr>
+</tbody></table>
+<p>cpuset: 适用于分配独立的CPU节点和Mem节点，比如将进程绑定在指定的CPU或者内存节点上运行</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cpuset.cpus</td>
+<td>可以使用的cpu节点</td>
+</tr>
+<tr>
+<td>cpuset.mems</td>
+<td>可以使用的mem节点</td>
+</tr>
+<tr>
+<td>cpuset.memory_migrate</td>
+<td>内存节点改变是否要迁移</td>
+</tr>
+<tr>
+<td>cpuset.cpu_exclusive</td>
+<td>此cgroup里的任务是否独享cpu</td>
+</tr>
+<tr>
+<td>cpuset.mem_exclusive</td>
+<td>此cgroup里的任务是否独享mem节点</td>
+</tr>
+<tr>
+<td>cpuset.mem_hardwall</td>
+<td>限制内核内存分配的节点（mems是用户态的分配）</td>
+</tr>
+<tr>
+<td>cpuset.memory_pressure</td>
+<td>计算换页的压力</td>
+</tr>
+<tr>
+<td>cpuset.memory_spread_page</td>
+<td>将page cache分配到各个节点中，而不是当前内存节点</td>
+</tr>
+<tr>
+<td>cpuset.memory_spread_slab</td>
+<td>将slab对象(inode和dentry)分散到节点中</td>
+</tr>
+<tr>
+<td>cpuset.sched_load_balance</td>
+<td>打开cpu set中的cpu的负载均衡</td>
+</tr>
+<tr>
+<td>cpuset.sched_relax_domain_level</td>
+<td>the searching range when migrating tasks</td>
+</tr>
+<tr>
+<td>cpuset.memory_pressure_enable0d</td>
+<td>是否需要计算 memory_pressure</td>
+</tr>
+</tbody></table>
+<h2 id="cgroup-与-systemd-关系"><a href="#cgroup-与-systemd-关系" class="headerlink" title="cgroup 与 systemd 关系"></a>cgroup 与 systemd 关系</h2><p>其实没啥关系, 但是 systemd 兼容 cgroup, 可以在 cgroup 之上启动</p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200206232211.png" alt=""></p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/wiki/docker/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    docker internal
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/wiki/Linux/boot/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Linux boot</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Limbo &copy; 2020 
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten" target="_blank" rel="noopener">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/wiki/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/wiki/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/wiki/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
