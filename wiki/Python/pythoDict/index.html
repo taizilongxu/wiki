@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Dict | Limbo&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="Dict" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="https:&#x2F;&#x2F;www.python.org&#x2F;dev&#x2F;peps&#x2F;pep-0412&#x2F;  https:&#x2F;&#x2F;flaggo.github.io&#x2F;python3-source-code-analysis&#x2F;objects&#x2F;dict-object&#x2F;  https:&#x2F;&#x2F;www.slideshare.net&#x2F;delimitry&#x2F;python-dictionary-past-present-future  http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dict">
+<meta property="og:url" content="http://taizilongxu.github.io/wiki/wiki/Python/pythoDict/index.html">
+<meta property="og:site_name" content="Limbo&#39;s Wiki">
+<meta property="og:description" content="https:&#x2F;&#x2F;www.python.org&#x2F;dev&#x2F;peps&#x2F;pep-0412&#x2F;  https:&#x2F;&#x2F;flaggo.github.io&#x2F;python3-source-code-analysis&#x2F;objects&#x2F;dict-object&#x2F;  https:&#x2F;&#x2F;www.slideshare.net&#x2F;delimitry&#x2F;python-dictionary-past-present-future  http">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_dict.png">
+<meta property="article:published_time" content="2020-04-04T11:29:17.000Z">
+<meta property="article:modified_time" content="2020-04-04T11:29:17.000Z">
+<meta property="article:author" content="Limbo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_dict.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Limbo&#39;s Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/wiki/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/wiki/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/wiki/css/style.css">
+
+    
+<script src="/wiki/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/wiki/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+        <meta name="google-site-verification" content="G-4X9REZXK33# enter Google site verification code" />
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/wiki/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Limbo&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/wiki/">首页</a>
+                
+                    <a class="main-nav-link" href="/wiki/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/wiki/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/wiki/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/wiki/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wiki/',
+        CONTENT_URL: '/wiki/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wiki/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/wiki/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            BigData
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Kafka
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/BigData/Kafka/cheat_sheet/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/BigData/flink/">Flink 如何工作的?</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Blog
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Blog/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Computer
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hackintosh
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Computer/Hackintosh/principel/">黑苹果原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hardware
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Disk
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Computer/Hardware/Disk/interface/">硬盘接口</a></li>  <li class="file"><a href="/wiki/wiki/Computer/Hardware/Disk/raid/">RAID</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Computer/Hardware/wifi/">Wi-Fi 协议</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hack
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hack/switch/">switch 破解原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Language
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Java
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            base
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Language/Java/base/collection/">Collection</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/base/base/">基本数据类型</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            jvm
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm/">JVM 简介 (翻译)</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm_mem/">JVM Memory</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Language/Java/shaded/">使用 maven shade plugin 解决重复类问题</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/maven/">Maven 汇总</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/class_bytes/">Class 文件结构</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linux
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            container
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Linux/container/cgroup/">cgroup</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/namespace/">Linux namespace</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/chroot/">chroot</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/boot/">Linux boot</a></li>  <li class="file"><a href="/wiki/wiki/Linux/cfs/">CFS 调度算法</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            MacOS
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/MacOS/homebrew/">homebrew</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Network
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Network/download/">下载原理</a></li>  <li class="file"><a href="/wiki/wiki/Network/virtual_IP_address/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Python
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Python/pythonObject/">Python Object</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonInt/">Int</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonStringError/">Python2 编码错误汇总</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonList/">List</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonInternalObject/">Python 内建类型</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonString/">String</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonFloat/">Float</a></li>  <li class="file active"><a href="/wiki/wiki/Python/pythoDict/">Dict</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonMemory/">python 内存</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            TODO
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/TODO/docker/">docker internal</a></li>  <li class="file"><a href="/wiki/wiki/TODO/compiler/">编译原理</a></li>  <li class="file"><a href="/wiki/wiki/TODO/ansible/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/saltstack/">Cpython</a></li>  <li class="file"><a href="/wiki/wiki/TODO/vfs/">虚拟文件系统</a></li>  <li class="file"><a href="/wiki/wiki/TODO/ssd/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/scala/">Nothing</a></li>  <li class="file"><a href="/wiki/wiki/TODO/BNF/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/OOMKiller/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/cpython/">Cypthon</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Tools
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Tools/git/">Git 原理</a></li>  <li class="file"><a href="/wiki/wiki/Tools/ssh/">Ssh</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            杂项
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/%E6%9D%82%E9%A1%B9/unicode/">unicode 和 UTF-8</a></li>  <li class="file"><a href="/wiki/wiki/%E6%9D%82%E9%A1%B9/ldap/">LDAP</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            生活
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/food/">食材</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/museum/">博物馆</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/helmet/">Helmet</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/whiskey/">威士忌</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/lvs/">LVS(Linux Virtual Server)</a></li>  <li class="file"><a href="/wiki/wiki/hbase/">hbase</a></li>  <li class="file"><a href="/wiki/wiki/zookeeper/">zookeeper</a></li>  <li class="file"><a href="/wiki/wiki/auth/">auth</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Python/pythoDict" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/wiki/categories/Python/">Python</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/wiki/Python/pythoDict/">
+            <time datetime="2020-04-04T11:29:17.000Z" itemprop="datePublished">2020-04-04</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/raw/master/source/_posts/Python/pythoDict.md' target="_blank" rel="noopener"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/edit/master/source/_posts/Python/pythoDict.md' target="_blank" rel="noopener"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/commits/master/source/_posts/Python/pythoDict.md' target="_blank" rel="noopener"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Dict
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <ul>
+<li><p><a href="https://www.python.org/dev/peps/pep-0412/" target="_blank" rel="noopener">https://www.python.org/dev/peps/pep-0412/</a></p>
+</li>
+<li><p><a href="https://flaggo.github.io/python3-source-code-analysis/objects/dict-object/" target="_blank" rel="noopener">https://flaggo.github.io/python3-source-code-analysis/objects/dict-object/</a></p>
+</li>
+<li><p><a href="https://www.slideshare.net/delimitry/python-dictionary-past-present-future" target="_blank" rel="noopener">https://www.slideshare.net/delimitry/python-dictionary-past-present-future</a></p>
+</li>
+<li><p><a href="https://github.com/zpoint/CPython-Internals/blob/master/BasicObject/dict/dict_cn.md" target="_blank" rel="noopener">https://github.com/zpoint/CPython-Internals/blob/master/BasicObject/dict/dict_cn.md</a></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_dict.png" alt=""></p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>代码位置: <code>Include/cpython/dictobject.h</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_HEAD</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Number of items in the dictionary */</span></span><br><span class="line">    Py_ssize_t ma_used;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Dictionary version: globally unique, value change each time</span></span><br><span class="line"><span class="comment">       the dictionary is modified */</span></span><br><span class="line">    <span class="keyword">uint64_t</span> ma_version_tag;</span><br><span class="line"></span><br><span class="line">    PyDictKeysObject *ma_keys;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* If ma_values is NULL, the table is "combined": keys and values</span></span><br><span class="line"><span class="comment">       are stored in ma_keys.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       If ma_values is not NULL, the table is splitted:</span></span><br><span class="line"><span class="comment">       keys are stored in ma_keys and values are stored in ma_values */</span></span><br><span class="line">    PyObject **ma_values;</span><br><span class="line">&#125; PyDictObject;</span><br></pre></td></tr></table></figure>
+
+<p>代码位置: <code>Objects/dict-common.h</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PyDictKeysObject</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">dictkeysobject</span> &#123;</span></span><br><span class="line">    Py_ssize_t dk_refcnt;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Size of the hash table (dk_indices). It must be a power of 2. */</span></span><br><span class="line">    Py_ssize_t dk_size;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Function to lookup in the hash table (dk_indices):</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       - lookdict(): general-purpose, and may return DKIX_ERROR if (and</span></span><br><span class="line"><span class="comment">         only if) a comparison raises an exception.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       - lookdict_unicode(): specialized to Unicode string keys, comparison of</span></span><br><span class="line"><span class="comment">         which can never raise an exception; that function can never return</span></span><br><span class="line"><span class="comment">         DKIX_ERROR.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       - lookdict_unicode_nodummy(): similar to lookdict_unicode() but further</span></span><br><span class="line"><span class="comment">         specialized for Unicode string keys that cannot be the &lt;dummy&gt; value.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       - lookdict_split(): Version of lookdict() for split tables. */</span></span><br><span class="line">    dict_lookup_func dk_lookup;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Number of usable entries in dk_entries. */</span></span><br><span class="line">    Py_ssize_t dk_usable;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Number of used entries in dk_entries. */</span></span><br><span class="line">    Py_ssize_t dk_nentries;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Actual hash table of dk_size entries. It holds indices in dk_entries,</span></span><br><span class="line"><span class="comment">       or DKIX_EMPTY(-1) or DKIX_DUMMY(-2).</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       Indices must be: 0 &lt;= indice &lt; USABLE_FRACTION(dk_size).</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       The size in bytes of an indice depends on dk_size:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       - 1 byte if dk_size &lt;= 0xff (char*)</span></span><br><span class="line"><span class="comment">       - 2 bytes if dk_size &lt;= 0xffff (int16_t*)</span></span><br><span class="line"><span class="comment">       - 4 bytes if dk_size &lt;= 0xffffffff (int32_t*)</span></span><br><span class="line"><span class="comment">       - 8 bytes otherwise (int64_t*)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">       Dynamically sized, SIZEOF_VOID_P is minimum. */</span></span><br><span class="line">    <span class="keyword">char</span> dk_indices[];  <span class="comment">/* char is required to avoid strict aliasing. */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* "PyDictKeyEntry dk_entries[dk_usable];" array follows:</span></span><br><span class="line"><span class="comment">       see the DK_ENTRIES() macro */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>代码位置: <code>Objects/dict-common.h</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="comment">/* Cached hash code of me_key. */</span></span><br><span class="line">    Py_hash_t me_hash;</span><br><span class="line">    PyObject *me_key;</span><br><span class="line">    PyObject *me_value; <span class="comment">/* This field is only meaningful for combined tables */</span></span><br><span class="line">&#125; PyDictKeyEntry</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Type类型"><a href="#Type类型" class="headerlink" title="Type类型"></a>Type类型</h3><p>代码位置: <code>Objects/dictobject.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">PyTypeObject PyDict_Type = &#123;</span><br><span class="line">    PyVarObject_HEAD_INIT(&amp;PyType_Type, <span class="number">0</span>)</span><br><span class="line">    <span class="string">"dict"</span>,</span><br><span class="line">    <span class="keyword">sizeof</span>(PyDictObject),</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    (destructor)dict_dealloc,                   <span class="comment">/* tp_dealloc */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_vectorcall_offset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_getattr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_setattr */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_async */</span></span><br><span class="line">    (reprfunc)dict_repr,                        <span class="comment">/* tp_repr */</span></span><br><span class="line">    &amp;dict_as_number,                            <span class="comment">/* tp_as_number */</span></span><br><span class="line">    &amp;dict_as_sequence,                          <span class="comment">/* tp_as_sequence */</span></span><br><span class="line">    &amp;dict_as_mapping,                           <span class="comment">/* tp_as_mapping */</span></span><br><span class="line">    PyObject_HashNotImplemented,                <span class="comment">/* tp_hash */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_call */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_str */</span></span><br><span class="line">    PyObject_GenericGetAttr,                    <span class="comment">/* tp_getattro */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_setattro */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_as_buffer */</span></span><br><span class="line">    Py_TPFLAGS_DEFAULT | Py_TPFLAGS_HAVE_GC |</span><br><span class="line">        Py_TPFLAGS_BASETYPE | Py_TPFLAGS_DICT_SUBCLASS,         <span class="comment">/* tp_flags */</span></span><br><span class="line">    dictionary_doc,                             <span class="comment">/* tp_doc */</span></span><br><span class="line">    dict_traverse,                              <span class="comment">/* tp_traverse */</span></span><br><span class="line">    dict_tp_clear,                              <span class="comment">/* tp_clear */</span></span><br><span class="line">    dict_richcompare,                           <span class="comment">/* tp_richcompare */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_weaklistoffset */</span></span><br><span class="line">    (getiterfunc)dict_iter,                     <span class="comment">/* tp_iter */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_iternext */</span></span><br><span class="line">    mapp_methods,                               <span class="comment">/* tp_methods */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_members */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_getset */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_base */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_dict */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_descr_get */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_descr_set */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_dictoffset */</span></span><br><span class="line">    dict_init,                                  <span class="comment">/* tp_init */</span></span><br><span class="line">    PyType_GenericAlloc,                        <span class="comment">/* tp_alloc */</span></span><br><span class="line">    dict_new,                                   <span class="comment">/* tp_new */</span></span><br><span class="line">    PyObject_GC_Del,                            <span class="comment">/* tp_free */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="C-接口"><a href="#C-接口" class="headerlink" title="C 接口"></a>C 接口</h3><p>代码位置: <code>Include/dictobject.h</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">PyObject *</span><br><span class="line">PyDict_New(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">    dictkeys_incref(Py_EMPTY_KEYS);</span><br><span class="line">    <span class="keyword">return</span> new_dict(Py_EMPTY_KEYS, empty_values);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> PyDictKeysObject empty_keys_struct = &#123;</span><br><span class="line">        <span class="number">1</span>, <span class="comment">/* dk_refcnt */</span></span><br><span class="line">        <span class="number">1</span>, <span class="comment">/* dk_size */</span></span><br><span class="line">        lookdict_split, <span class="comment">/* dk_lookup */</span></span><br><span class="line">        <span class="number">0</span>, <span class="comment">/* dk_usable (immutable) */</span></span><br><span class="line">        <span class="number">0</span>, <span class="comment">/* dk_nentries */</span></span><br><span class="line">        &#123;DKIX_EMPTY, DKIX_EMPTY, DKIX_EMPTY, DKIX_EMPTY,</span><br><span class="line">         DKIX_EMPTY, DKIX_EMPTY, DKIX_EMPTY, DKIX_EMPTY&#125;, <span class="comment">/* dk_indices */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>初始化 dict 大小为 <code>8</code></li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/wiki/Python/pythonMemory/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    python 内存
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/food/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">食材</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Limbo &copy; 2020 
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten" target="_blank" rel="noopener">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/wiki/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/wiki/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/wiki/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Python Object | Limbo&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="Python Object" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="资料:  https:&#x2F;&#x2F;github.com&#x2F;zpoint&#x2F;CPython-Internals https:&#x2F;&#x2F;python.fasionchan.com&#x2F;zh_CN&#x2F;latest&#x2F;source&#x2F;object-model&#x2F;pyobject.html https:&#x2F;&#x2F;blog.csdn.net&#x2F;Lzs1998&#x2F;article&#x2F;details&#x2F;103907147?depth_1-utm_source">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Object">
+<meta property="og:url" content="http://taizilongxu.github.io/wiki/wiki/Python/pythonObject/index.html">
+<meta property="og:site_name" content="Limbo&#39;s Wiki">
+<meta property="og:description" content="资料:  https:&#x2F;&#x2F;github.com&#x2F;zpoint&#x2F;CPython-Internals https:&#x2F;&#x2F;python.fasionchan.com&#x2F;zh_CN&#x2F;latest&#x2F;source&#x2F;object-model&#x2F;pyobject.html https:&#x2F;&#x2F;blog.csdn.net&#x2F;Lzs1998&#x2F;article&#x2F;details&#x2F;103907147?depth_1-utm_source">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_struct.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_type_object.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_object_create.png">
+<meta property="article:published_time" content="2020-03-19T17:28:04.000Z">
+<meta property="article:modified_time" content="2020-03-19T17:28:04.000Z">
+<meta property="article:author" content="Limbo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_struct.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Limbo&#39;s Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/wiki/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/wiki/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/wiki/css/style.css">
+
+    
+<script src="/wiki/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/wiki/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+        <meta name="google-site-verification" content="G-4X9REZXK33# enter Google site verification code" />
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/wiki/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Limbo&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/wiki/">首页</a>
+                
+                    <a class="main-nav-link" href="/wiki/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/wiki/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/wiki/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/wiki/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wiki/',
+        CONTENT_URL: '/wiki/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wiki/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/wiki/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            BigData
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Kafka
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/BigData/Kafka/cheat_sheet/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/BigData/flink/">Flink 如何工作的?</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Blog
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Blog/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Computer
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hackintosh
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Computer/Hackintosh/principel/">黑苹果原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hardware
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Disk
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Computer/Hardware/Disk/interface/">硬盘接口</a></li>  <li class="file"><a href="/wiki/wiki/Computer/Hardware/Disk/raid/">RAID</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Computer/Hardware/wifi/">Wi-Fi 协议</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hack
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hack/switch/">switch 破解原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Language
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Java
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            base
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Language/Java/base/collection/">Collection</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/base/base/">基本数据类型</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            jvm
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm/">JVM 简介 (翻译)</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm_mem/">JVM Memory</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Language/Java/shaded/">使用 maven shade plugin 解决重复类问题</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/maven/">Maven 汇总</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/class_bytes/">Class 文件结构</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linux
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            container
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Linux/container/cgroup/">cgroup</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/namespace/">Linux namespace</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/chroot/">chroot</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/boot/">Linux boot</a></li>  <li class="file"><a href="/wiki/wiki/Linux/cfs/">CFS 调度算法</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            MacOS
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/MacOS/homebrew/">homebrew</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Network
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Network/download/">下载原理</a></li>  <li class="file"><a href="/wiki/wiki/Network/virtual_IP_address/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Python
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/wiki/wiki/Python/pythonObject/">Python Object</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonInt/">Int</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonStringError/">Python2 编码错误汇总</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonList/">List</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonInternalObject/">Python 内建类型</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonString/">String</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonFloat/">Float</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythoDict/">Dict</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonMemory/">python 内存</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            TODO
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/TODO/docker/">docker internal</a></li>  <li class="file"><a href="/wiki/wiki/TODO/compiler/">编译原理</a></li>  <li class="file"><a href="/wiki/wiki/TODO/ansible/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/saltstack/">Cpython</a></li>  <li class="file"><a href="/wiki/wiki/TODO/vfs/">虚拟文件系统</a></li>  <li class="file"><a href="/wiki/wiki/TODO/ssd/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/scala/">Nothing</a></li>  <li class="file"><a href="/wiki/wiki/TODO/BNF/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/OOMKiller/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/cpython/">Cypthon</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Tools
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Tools/git/">Git 原理</a></li>  <li class="file"><a href="/wiki/wiki/Tools/ssh/">Ssh</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            杂项
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/%E6%9D%82%E9%A1%B9/unicode/">unicode 和 UTF-8</a></li>  <li class="file"><a href="/wiki/wiki/%E6%9D%82%E9%A1%B9/ldap/">LDAP</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            生活
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/food/">食材</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/museum/">博物馆</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/helmet/">Helmet</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/whiskey/">威士忌</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/lvs/">LVS(Linux Virtual Server)</a></li>  <li class="file"><a href="/wiki/wiki/hbase/">hbase</a></li>  <li class="file"><a href="/wiki/wiki/zookeeper/">zookeeper</a></li>  <li class="file"><a href="/wiki/wiki/auth/">auth</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Python/pythonObject" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/wiki/categories/Python/">Python</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/wiki/Python/pythonObject/">
+            <time datetime="2020-03-19T17:28:04.000Z" itemprop="datePublished">2020-03-20</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/raw/master/source/_posts/Python/pythonObject.md' target="_blank" rel="noopener"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/edit/master/source/_posts/Python/pythonObject.md' target="_blank" rel="noopener"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/commits/master/source/_posts/Python/pythonObject.md' target="_blank" rel="noopener"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Python Object
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PyObject"><span class="toc-number">1.</span> <span class="toc-text">PyObject</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PyTypeObject"><span class="toc-number">2.</span> <span class="toc-text">PyTypeObject</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PyType-Type-type"><span class="toc-number">3.</span> <span class="toc-text">PyType_Type(type)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PyBaseObject-Type-object"><span class="toc-number">4.</span> <span class="toc-text">PyBaseObject_Type(object)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象过程"><span class="toc-number">5.</span> <span class="toc-text">创建对象过程</span></a></li></ol>
+                </div>
+            
+        
+        
+            <p>资料:</p>
+<ul>
+<li><a href="https://github.com/zpoint/CPython-Internals" target="_blank" rel="noopener">https://github.com/zpoint/CPython-Internals</a></li>
+<li><a href="https://python.fasionchan.com/zh_CN/latest/source/object-model/pyobject.html" target="_blank" rel="noopener">https://python.fasionchan.com/zh_CN/latest/source/object-model/pyobject.html</a></li>
+<li><a href="https://blog.csdn.net/Lzs1998/article/details/103907147?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/Lzs1998/article/details/103907147?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></li>
+</ul>
+<p>当前版本代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/python/cpython.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> cpython</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard 6672c16b1d7f83789bf3a2016bd19edfd3568e71</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="PyObject"><a href="#PyObject" class="headerlink" title="PyObject"></a>PyObject</h2><p>代码地址: <code>Include/object.h</code></p>
+<p>定长对象 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">object</span> &#123;</span></span><br><span class="line">    _PyObject_HEAD_EXTRA</span><br><span class="line">    Py_ssize_t ob_refcnt;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">ob_type</span>;</span></span><br><span class="line">&#125; PyObject;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>_PyObject_HEAD_EXTRA: Debug 用, 可以忽略</li>
+<li>ob_refnt: 引用计数, 垃圾回收使用</li>
+<li>ob_type: 类型指针, 指向对象的类型对象</li>
+</ul>
+<p>变长对象</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject ob_base;</span><br><span class="line">    Py_ssize_t ob_size; <span class="comment">/* Number of items in variable part */</span></span><br><span class="line">&#125; PyVarObject;</span><br></pre></td></tr></table></figure>
+
+<h2 id="PyTypeObject"><a href="#PyTypeObject" class="headerlink" title="PyTypeObject"></a>PyTypeObject</h2><p>代码位置: <code>Include/cpython/object.h</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> &#123;</span></span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *tp_name; <span class="comment">/* For printing, in format "&lt;module&gt;.&lt;name&gt;" */</span></span><br><span class="line">    Py_ssize_t tp_basicsize, tp_itemsize; <span class="comment">/* For allocation */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Methods to implement standard operations */</span></span><br><span class="line">    destructor tp_dealloc;</span><br><span class="line">    printfunc tp_print;</span><br><span class="line"></span><br><span class="line">    getattrfunc tp_getattr;</span><br><span class="line">    setattrfunc tp_setattr;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">/* Attribute descriptor and subclassing stuff */</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">tp_base</span>;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ......</span></span><br><span class="line">&#125; PyTypeObject;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>tp_name: 类型名称</li>
+<li>tp_basicsize, tp_itemsize: 创建实例对象所需内存信息</li>
+<li>tp_print, tp_getattr: 该类型支持的相关操作信息</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_struct.png" alt=""></p>
+<h2 id="PyType-Type-type"><a href="#PyType-Type-type" class="headerlink" title="PyType_Type(type)"></a>PyType_Type(type)</h2><p>代码位置: <code>Objects/typeobject.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">PyTypeObject PyType_Type = &#123;</span><br><span class="line">    PyVarObject_HEAD_INIT(&amp;PyType_Type, <span class="number">0</span>)</span><br><span class="line">    <span class="string">"type"</span>,                                     <span class="comment">/* tp_name */</span></span><br><span class="line">    <span class="keyword">sizeof</span>(PyHeapTypeObject),                   <span class="comment">/* tp_basicsize */</span></span><br><span class="line">    <span class="keyword">sizeof</span>(PyMemberDef),                        <span class="comment">/* tp_itemsize */</span></span><br><span class="line">    (destructor)type_dealloc,                   <span class="comment">/* tp_dealloc */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    (reprfunc)type_repr,                        <span class="comment">/* tp_repr */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>内建类型和自定义类对应的 <code>PyTypeObject</code> 都是通过 <code>PyTypeType</code> 创建的, 被称作 <code>元类型(meta class)</code></li>
+<li><code>PyType_Type</code> 将自己的 ob_type 设置成自己</li>
+</ul>
+<h2 id="PyBaseObject-Type-object"><a href="#PyBaseObject-Type-object" class="headerlink" title="PyBaseObject_Type(object)"></a>PyBaseObject_Type(object)</h2><p>代码位置: <code>Objects/typeobject.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">PyTypeObject PyBaseObject_Type = &#123;</span><br><span class="line">    PyVarObject_HEAD_INIT(&amp;PyType_Type, <span class="number">0</span>)</span><br><span class="line">    <span class="string">"object"</span>,                                   <span class="comment">/* tp_name */</span></span><br><span class="line">    <span class="keyword">sizeof</span>(PyObject),                           <span class="comment">/* tp_basicsize */</span></span><br><span class="line">    <span class="number">0</span>,                                          <span class="comment">/* tp_itemsize */</span></span><br><span class="line">    object_dealloc,                             <span class="comment">/* tp_dealloc */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    object_repr,                                <span class="comment">/* tp_repr */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_type_object.png" alt=""></p>
+<p>总结</p>
+<ul>
+<li>Type 是所有实例化对象的爸爸</li>
+<li>Object 是为了确认类和父类的关系在创建对象时</li>
+</ul>
+<h2 id="创建对象过程"><a href="#创建对象过程" class="headerlink" title="创建对象过程"></a>创建对象过程</h2><p><code>pi = float(&#39;3.14&#39;)</code> 通过 Python 的 interpreter 我们可以翻译出这个语句是实例化 float 的过程, 这个过程即 type 来统一创建对象的流程(可以通过学习 Cpython 加深理解)</p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/python_object_create.png" alt=""></p>
+<ol>
+<li>调用 float ， Python 最终执行其类型对象 type 的 tp_call 函数；</li>
+<li>tp_call 函数调用 float 的 tp_new 函数为实例对象分配 <strong>内存空间</strong> ；</li>
+<li>tp_call 函数必要时进一步调用 tp_init 函数对实例对象进行 <strong>初始化</strong> ；</li>
+</ol>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/wiki/Python/pythonInt/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Int
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/wiki/TODO/cpython/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Cypthon</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Limbo &copy; 2020 
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten" target="_blank" rel="noopener">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/wiki/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/wiki/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/wiki/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Collection | Limbo&#39;s Wiki</title>
+    
+    
+        <meta name="keywords" content="Collection" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="资料  https:&#x2F;&#x2F;yikun.github.io&#x2F;2015&#x2F;04&#x2F;01&#x2F;Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0&#x2F; https:&#x2F;&#x2F;blog.csdn.net&#x2F;u013309870&#x2F;article&#x2F;details&#x2F;71478120 [https:&#x2F;&#x2F;blog.timberliu.co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Collection">
+<meta property="og:url" content="http://taizilongxu.github.io/wiki/wiki/Language/Java/base/collection/index.html">
+<meta property="og:site_name" content="Limbo&#39;s Wiki">
+<meta property="og:description" content="资料  https:&#x2F;&#x2F;yikun.github.io&#x2F;2015&#x2F;04&#x2F;01&#x2F;Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0&#x2F; https:&#x2F;&#x2F;blog.csdn.net&#x2F;u013309870&#x2F;article&#x2F;details&#x2F;71478120 [https:&#x2F;&#x2F;blog.timberliu.co">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200308180152.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309072549.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309072705.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309073942.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309075006.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309072917.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309023357.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309071837.png">
+<meta property="article:published_time" content="2020-03-08T09:55:29.562Z">
+<meta property="article:modified_time" content="2020-03-09T07:52:46.283Z">
+<meta property="article:author" content="Limbo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200308180152.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Limbo&#39;s Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/wiki/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/wiki/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/wiki/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/wiki/css/style.css">
+
+    
+<script src="/wiki/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/wiki/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/wiki/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+        <meta name="google-site-verification" content="G-4X9REZXK33# enter Google site verification code" />
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/wiki/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Limbo&#39;s Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/wiki/">首页</a>
+                
+                    <a class="main-nav-link" href="/wiki/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/wiki/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/wiki/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/wiki/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/wiki/',
+        CONTENT_URL: '/wiki/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/wiki/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/wiki/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/wiki/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            BigData
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Kafka
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/BigData/Kafka/cheat_sheet/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/BigData/flink/">Flink 如何工作的?</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Blog
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Blog/hello-world/">Hello World</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Computer
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hackintosh
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Computer/Hackintosh/principel/">黑苹果原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hardware
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Disk
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Computer/Hardware/Disk/interface/">硬盘接口</a></li>  <li class="file"><a href="/wiki/wiki/Computer/Hardware/Disk/raid/">RAID</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Computer/Hardware/wifi/">Wi-Fi 协议</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hack
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Hack/switch/">switch 破解原理</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Language
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Java
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            base
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/wiki/wiki/Language/Java/base/collection/">Collection</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/base/base/">基本数据类型</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            jvm
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm/">JVM 简介 (翻译)</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/jvm/jvm_mem/">JVM Memory</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Language/Java/shaded/">使用 maven shade plugin 解决重复类问题</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/maven/">Maven 汇总</a></li>  <li class="file"><a href="/wiki/wiki/Language/Java/class_bytes/">Class 文件结构</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linux
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            container
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Linux/container/cgroup/">cgroup</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/namespace/">Linux namespace</a></li>  <li class="file"><a href="/wiki/wiki/Linux/container/chroot/">chroot</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/Linux/env/">环境变量</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell_navigation/">shell navigation</a></li>  <li class="file"><a href="/wiki/wiki/Linux/unix/">unix 哲学</a></li>  <li class="file"><a href="/wiki/wiki/Linux/crontab/">crontab</a></li>  <li class="file"><a href="/wiki/wiki/Linux/shell/">shell</a></li>  <li class="file"><a href="/wiki/wiki/Linux/boot/">Linux boot</a></li>  <li class="file"><a href="/wiki/wiki/Linux/cfs/">CFS 调度算法</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            MacOS
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/MacOS/homebrew/">homebrew</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Network
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Network/download/">下载原理</a></li>  <li class="file"><a href="/wiki/wiki/Network/virtual_IP_address/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Python
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Python/pythonObject/">Python Object</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonInt/">Int</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonStringError/">Python2 编码错误汇总</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonList/">List</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonInternalObject/">Python 内建类型</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonString/">String</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonFloat/">Float</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythoDict/">Dict</a></li>  <li class="file"><a href="/wiki/wiki/Python/pythonMemory/">python 内存</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            TODO
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/TODO/docker/">docker internal</a></li>  <li class="file"><a href="/wiki/wiki/TODO/compiler/">编译原理</a></li>  <li class="file"><a href="/wiki/wiki/TODO/ansible/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/saltstack/">Cpython</a></li>  <li class="file"><a href="/wiki/wiki/TODO/vfs/">虚拟文件系统</a></li>  <li class="file"><a href="/wiki/wiki/TODO/ssd/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/scala/">Nothing</a></li>  <li class="file"><a href="/wiki/wiki/TODO/BNF/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/OOMKiller/"></a></li>  <li class="file"><a href="/wiki/wiki/TODO/cpython/">Cypthon</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Tools
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/Tools/git/">Git 原理</a></li>  <li class="file"><a href="/wiki/wiki/Tools/ssh/">Ssh</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            杂项
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/%E6%9D%82%E9%A1%B9/unicode/">unicode 和 UTF-8</a></li>  <li class="file"><a href="/wiki/wiki/%E6%9D%82%E9%A1%B9/ldap/">LDAP</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            生活
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/food/">食材</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/museum/">博物馆</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/helmet/">Helmet</a></li>  <li class="file"><a href="/wiki/wiki/%E7%94%9F%E6%B4%BB/whiskey/">威士忌</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/wiki/index/">欢迎来到我的 Wiki</a></li>  <li class="file"><a href="/wiki/wiki/lvs/">LVS(Linux Virtual Server)</a></li>  <li class="file"><a href="/wiki/wiki/hbase/">hbase</a></li>  <li class="file"><a href="/wiki/wiki/zookeeper/">zookeeper</a></li>  <li class="file"><a href="/wiki/wiki/auth/">auth</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Language/Java/base/collection" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/wiki/categories/Language/">Language</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/wiki/categories/Language/Java/">Java</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/wiki/categories/Language/Java/base/">base</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/wiki/wiki/Language/Java/base/collection/">
+            <time datetime="2020-03-08T09:55:29.562Z" itemprop="datePublished">2020-03-08</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/raw/master/source/_posts/Language/Java/base/collection.md' target="_blank" rel="noopener"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/edit/master/source/_posts/Language/Java/base/collection.md' target="_blank" rel="noopener"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/taizilongxu/wiki/commits/master/source/_posts/Language/Java/base/collection.md' target="_blank" rel="noopener"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Collection
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#List"><span class="toc-number">1.</span> <span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList"><span class="toc-number">1.1.</span> <span class="toc-text">ArrayList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedList"><span class="toc-number">1.2.</span> <span class="toc-text">LinkedList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vector"><span class="toc-number">1.3.</span> <span class="toc-text">Vector</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set"><span class="toc-number">2.</span> <span class="toc-text">Set</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Queue"><span class="toc-number">3.</span> <span class="toc-text">Queue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayDeque"><span class="toc-number">3.1.</span> <span class="toc-text">ArrayDeque</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map"><span class="toc-number">4.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap"><span class="toc-number">4.1.</span> <span class="toc-text">HashMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LinkedHashMap"><span class="toc-number">4.2.</span> <span class="toc-text">LinkedHashMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TreeMap"><span class="toc-number">4.3.</span> <span class="toc-text">TreeMap</span></a></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <p>资料</p>
+<ul>
+<li><a href="https://yikun.github.io/2015/04/01/Java-HashMap工作原理及实现/" target="_blank" rel="noopener">https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/</a></li>
+<li><a href="https://blog.csdn.net/u013309870/article/details/71478120" target="_blank" rel="noopener">https://blog.csdn.net/u013309870/article/details/71478120</a></li>
+<li>[<a href="https://blog.timberliu.com/2019/02/19/024_Java%E9%9B%86%E5%90%88%E4%B9%8B%20%E6%80%BB%E4%BD%93%E6%9E%B6%E6%9E%84/]" target="_blank" rel="noopener">https://blog.timberliu.com/2019/02/19/024_Java%E9%9B%86%E5%90%88%E4%B9%8B%20%E6%80%BB%E4%BD%93%E6%9E%B6%E6%9E%84/]</a>(<a href="https://blog.timberliu.com/2019/02/19/024_Java集合之" target="_blank" rel="noopener">https://blog.timberliu.com/2019/02/19/024_Java集合之</a> 总体架构/)</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200308180152.png" alt=""></p>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>有序列表, 用特定的插入顺序来维护元素顺序</p>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>动态数组(自动扩容), 随机访问效率高, 但插入和删除效率低, 有一个初始容量(<code>10</code>), 代表数组的大小, 在快满时进行扩容操作, 每次增长 <code>1.5</code> 倍大小</p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309072549.png" alt=""></p>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h3><p>双向链表, 不支持随机访问, 但容易进行删除和插入</p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309072705.png" alt=""></p>
+<p>因为是双向链表, 在通过 index 获取元素时可以以 O(n/2) 的复杂度获取</p>
+<h3 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h3><p>与 <code>ArrayList</code> 相似, 基于动态数组, 区别就是它是同步的.</p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>不包含重复元素, 内部通过 <code>Map</code> 实现</p>
+<p><strong>HashSet</strong>: 底层基于 <code>HashMap</code> 实现, 内部顺序由哈希码决定, 可以放入 <code>null</code></p>
+<p><strong>TreeSet</strong>: 底层基于 <code>TreeMap</code> 实现, 以某种排序规则排序. 它是使用元素的自然顺序排序, 或根据创建 <code>Set</code> 时提供的 <code>Comparator</code> 进行排序. 但不允许存入 <code>null</code> 值</p>
+<h2 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h2><p>先进先出队列, 不允许随机访问</p>
+<h3 id="ArrayDeque"><a href="#ArrayDeque" class="headerlink" title="ArrayDeque"></a>ArrayDeque</h3><p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309073942.png" alt=""></p>
+<p>循环数组实现双端队列, 默认大小 <code>16</code></p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309075006.png" alt=""></p>
+<p><strong>PriorityQueue</strong>: 优先级队列, 用自然顺序或制定的比较器来排序. 队列的头是按指定排序方式的最小元素</p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>键值对组成的集合, 提供 <code>key</code> 到 <code>value</code> 的映射</p>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>通过哈希函数将元素的哈希地址转换成数组索引, 出现碰撞冲突使用链表形式存储哈希地址相同的元素, 在 <code>JDK8</code> 后, 链表过长会转换为红黑树, 可以放入 <code>null</code></p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309072917.png" alt=""></p>
+<p><strong>重要参数:</strong></p>
+<ul>
+<li><code>Initial capacity</code> 初始容量(默认 <code>16</code>), 但是，如果用户通过构造函数指定了一个数字作为容量，那么Hash会选择大于该数字的第一个2的幂作为容量。(3-&gt;4、7-&gt;8、9-&gt;16)</li>
+<li><code>Load factor</code> 填满最大比例(默认 <code>0.75</code>) </li>
+</ul>
+<p><strong>Hash 函数实现:</strong></p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309023357.png" alt=""></p>
+<p>大概理解下即可, 比较 geek 的点是 <code>h&gt;&gt;&gt;16</code> 增加一下高位参与下标运算</p>
+<p><strong>Put 函数实现:</strong></p>
+<ol>
+<li>对key的hashCode()做hash，然后再计算index;</li>
+<li>如果没碰撞直接放到bucket里；</li>
+<li>如果碰撞了，以链表的形式存在buckets后；</li>
+<li>如果碰撞导致链表过长(大于等于TREEIFY_THRESHOLD, 默认值为 <code>8</code>)，就把链表转换成红黑树；</li>
+<li>如果节点已经存在就替换old value(保证key的唯一性)</li>
+<li>如果bucket满了(超过load factor*current capacity)，就要resize。</li>
+</ol>
+<p><strong>Get 函数实现:</strong></p>
+<ol>
+<li>bucket里的第一个节点，直接命中；</li>
+<li>如果有冲突，则通过key.equals(k)去查找对应的entry<br>  若为树，则在树中通过key.equals(k)查找，O(logn)；<br>  若为链表，则在链表中通过key.equals(k)查找，O(n)。</li>
+</ol>
+<p><strong>Resize 函数实现:</strong></p>
+<p>重点是理解每次 resize 都是2倍, 最后一步的 <code>(n-1) &amp; hash</code> 效率比较高</p>
+<h3 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><p>在 HashMap 的基础上增加双向链表的结构, 实时多加了 before, after 指针,  为了维护<code>access-order</code> 或者 <code>insertion-order</code></p>
+<p><img src="https://raw.githubusercontent.com/taizilongxu/img/master/img/20200309071837.png" alt=""></p>
+<p>利用 LinkedHashMap 以及用户定义的 <code>removeEldestEntyry</code> 方法可以实现 LRU 功能</p>
+<h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>实现了 <code>SortedMap</code> 接口, 内部以<code>红黑树</code>实现, 键以某种排序规则排序, 也可以通过 <code>Comparator</code> 比较器指定</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/wiki/Language/Java/base/base/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    基本数据类型
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/wiki/MacOS/homebrew/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">homebrew</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Limbo &copy; 2020 
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten" target="_blank" rel="noopener">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/wiki/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/wiki/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/wiki/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/wiki/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

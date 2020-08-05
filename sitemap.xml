@@ -2,128 +2,324 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/GYM/gym/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/%E6%9D%82%E9%A1%B9/ldap/</loc>
     
-    <lastmod>2020-02-24T17:23:27.687Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/download/</loc>
-    
-    <lastmod>2020-02-19T16:30:22.726Z</lastmod>
+    <lastmod>2020-08-02T16:49:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/docker/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/%E7%94%9F%E6%B4%BB/whiskey/</loc>
     
-    <lastmod>2020-02-11T17:29:20.682Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/chroot/</loc>
-    
-    <lastmod>2020-02-11T17:28:04.630Z</lastmod>
+    <lastmod>2020-08-02T16:28:10.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/namespace/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/%E7%94%9F%E6%B4%BB/helmet/</loc>
     
-    <lastmod>2020-02-11T17:20:00.853Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/cgroup/</loc>
-    
-    <lastmod>2020-02-11T16:19:19.519Z</lastmod>
+    <lastmod>2020-08-02T16:27:22.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/vfs/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/zookeeper/</loc>
     
-    <lastmod>2020-02-09T15:55:23.562Z</lastmod>
+    <lastmod>2020-07-09T04:21:45.480Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/cfs/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/lvs/</loc>
     
-    <lastmod>2020-02-06T17:24:48.559Z</lastmod>
+    <lastmod>2020-07-09T04:21:05.783Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/auth/</loc>
+    
+    <lastmod>2020-06-23T07:37:39.441Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/hbase/</loc>
+    
+    <lastmod>2020-06-05T13:11:14.787Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Network/virtual_IP_address/</loc>
+    
+    <lastmod>2020-06-01T12:29:07.639Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/%E7%94%9F%E6%B4%BB/museum/</loc>
+    
+    <lastmod>2020-06-01T05:19:50.045Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/%E6%9D%82%E9%A1%B9/unicode/</loc>
+    
+    <lastmod>2020-05-27T13:21:18.222Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/jvm/jvm_mem/</loc>
+    
+    <lastmod>2020-05-21T13:30:15.677Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonMemory/</loc>
+    
+    <lastmod>2020-05-03T17:34:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythoDict/</loc>
+    
+    <lastmod>2020-04-04T11:29:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonInt/</loc>
+    
+    <lastmod>2020-04-03T18:07:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/%E7%94%9F%E6%B4%BB/food/</loc>
+    
+    <lastmod>2020-04-03T16:26:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonFloat/</loc>
+    
+    <lastmod>2020-03-28T18:10:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonString/</loc>
+    
+    <lastmod>2020-03-28T18:03:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonInternalObject/</loc>
+    
+    <lastmod>2020-03-28T18:02:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonList/</loc>
+    
+    <lastmod>2020-03-28T17:45:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonStringError/</loc>
+    
+    <lastmod>2020-03-24T18:01:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Python/pythonObject/</loc>
+    
+    <lastmod>2020-03-19T17:28:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/cpython/</loc>
+    
+    <lastmod>2020-03-19T17:24:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/OOMKiller/</loc>
+    
+    <lastmod>2020-03-13T11:56:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/BNF/</loc>
+    
+    <lastmod>2020-03-13T10:06:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/saltstack/</loc>
+    
+    <lastmod>2020-03-13T05:59:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/scala/</loc>
+    
+    <lastmod>2020-03-12T07:01:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/ansible/</loc>
+    
+    <lastmod>2020-03-12T06:37:01.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Linux/boot/</loc>
     
-    <lastmod>2020-02-06T07:43:40.835Z</lastmod>
+    <lastmod>2020-03-10T15:07:45.346Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/base/collection/</loc>
+    
+    <lastmod>2020-03-09T07:52:46.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/ssd/</loc>
+    
+    <lastmod>2020-03-09T06:47:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/base/base/</loc>
+    
+    <lastmod>2020-03-08T15:56:07.869Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/MacOS/homebrew/</loc>
+    
+    <lastmod>2020-03-07T02:45:39.998Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Network/download/</loc>
+    
+    <lastmod>2020-03-06T18:51:40.865Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/index/</loc>
     
-    <lastmod>2020-02-05T06:27:23.231Z</lastmod>
+    <lastmod>2020-02-18T13:45:07.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/saltstack/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/docker/</loc>
     
-    <lastmod>2020-02-02T16:48:49.929Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/ansible/</loc>
-    
-    <lastmod>2020-02-02T16:48:43.478Z</lastmod>
+    <lastmod>2020-02-11T17:29:20.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Hackintosh/principel/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/chroot/</loc>
     
-    <lastmod>2020-02-02T16:48:27.214Z</lastmod>
+    <lastmod>2020-02-11T17:28:04.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/compiler/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/namespace/</loc>
     
-    <lastmod>2020-01-31T18:17:39.622Z</lastmod>
+    <lastmod>2020-02-11T17:20:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/container/cgroup/</loc>
+    
+    <lastmod>2020-02-11T16:19:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/vfs/</loc>
+    
+    <lastmod>2020-02-09T15:55:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/cfs/</loc>
+    
+    <lastmod>2020-02-06T17:24:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Computer/Hackintosh/principel/</loc>
+    
+    <lastmod>2020-02-02T16:48:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/TODO/compiler/</loc>
+    
+    <lastmod>2020-01-31T18:17:39.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Hack/switch/</loc>
     
-    <lastmod>2020-01-31T18:16:27.562Z</lastmod>
+    <lastmod>2020-01-31T18:16:27.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/class_bytes/</loc>
     
-    <lastmod>2020-01-22T09:30:11.132Z</lastmod>
+    <lastmod>2020-01-22T09:30:11.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Linux/shell/</loc>
     
-    <lastmod>2020-01-21T12:13:35.257Z</lastmod>
+    <lastmod>2020-01-21T12:13:35.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Linux/shell_navigation/</loc>
     
-    <lastmod>2020-01-21T08:36:22.633Z</lastmod>
+    <lastmod>2020-01-21T08:36:22.000Z</lastmod>
     
   </url>
   
@@ -135,121 +331,114 @@
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/jvm/jvm_mem/</loc>
-    
-    <lastmod>2020-01-20T16:00:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Linux/crontab/</loc>
     
-    <lastmod>2020-01-15T12:12:26.138Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/categories/index.html</loc>
-    
-    <lastmod>2020-01-15T12:06:59.177Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/about/index.html</loc>
-    
-    <lastmod>2020-01-15T12:06:59.176Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/tags/index.html</loc>
-    
-    <lastmod>2020-01-15T12:06:59.176Z</lastmod>
+    <lastmod>2020-01-15T12:12:26.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/BigData/flink/</loc>
     
-    <lastmod>2020-01-15T12:06:59.175Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/BigData/Kafka/cheat_sheet/</loc>
-    
-    <lastmod>2020-01-15T12:06:59.175Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/unix/</loc>
-    
-    <lastmod>2020-01-15T12:06:59.172Z</lastmod>
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Linux/env/</loc>
     
-    <lastmod>2020-01-15T12:06:59.171Z</lastmod>
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/shaded/</loc>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Linux/unix/</loc>
     
-    <lastmod>2020-01-15T12:06:59.169Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/maven/</loc>
-    
-    <lastmod>2020-01-15T12:06:59.169Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/jvm/jvm/</loc>
-    
-    <lastmod>2020-01-15T12:06:59.168Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/raid/</loc>
-    
-    <lastmod>2020-01-15T12:06:59.165Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Hardware/Disk/interface/</loc>
-    
-    <lastmod>2020-01-15T12:06:59.165Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://taizilongxu.github.io/wiki/wiki/Hardware/wifi/</loc>
-    
-    <lastmod>2020-01-15T12:06:59.164Z</lastmod>
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Tools/git/</loc>
     
-    <lastmod>2020-01-15T12:06:59.164Z</lastmod>
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://taizilongxu.github.io/wiki/wiki/Tools/ssh/</loc>
     
-    <lastmod>2020-01-15T12:06:59.163Z</lastmod>
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/BigData/Kafka/cheat_sheet/</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/maven/</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/shaded/</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Language/Java/jvm/jvm/</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Computer/Hardware/wifi/</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Computer/Hardware/Disk/interface/</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/wiki/Computer/Hardware/Disk/raid/</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/about/index.html</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/categories/index.html</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://taizilongxu.github.io/wiki/tags/index.html</loc>
+    
+    <lastmod>2020-01-15T12:06:59.000Z</lastmod>
     
   </url>
   
